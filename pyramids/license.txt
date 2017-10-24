@@ -1,0 +1,7 @@
+
+License: WTFPL
+This version of mod by: Shara RedCat
+
+Nodes take from BlockMen's mod of the same name. 
+License preserved from original mod. Other info discarded. 
+
