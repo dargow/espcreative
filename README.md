@@ -6,7 +6,7 @@ Aim
 Update and clean mods so we can fix the server.
 
 Current mods:
-1. areas - Updated to new version
+1. areas - Removed - use official repo
 2. army - Fixed. removed non-creative itemsDD (gun, bullet, etc...)
 3. beverage - Updated to new version.
 4. birthstones - Fixed. removed non-creative items
@@ -21,7 +21,7 @@ Current mods:
 13. cutepie
 14. doors_modular
 15. digilines
-16. factory_bridges
+16. factory_bridges - Removed recipes.
 17. farming_plus
 18. food
 19. gis
@@ -37,7 +37,7 @@ Current mods:
 29. jumping
 30. lapis
 31. mesecar
-32. mesecons_modpack
+32. mesecons_modpack - Removed - use official repo
 33. moreblocks
 34. morestones
 35. mybricks
@@ -84,7 +84,7 @@ Current mods:
 76. unifieddyes - Updated
 77. windmill
 78. wine
-79. worldedit_modpack
+79. worldedit_modpack - Removed - use official repo
 80. xdecor
 81. xtraores
 
