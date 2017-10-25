@@ -96,3 +96,4 @@ These mods are not included in the repo because the current versions should be u
 2. mese_restriction - https://github.com/Ezhh/mese_restriction
 3. mesecons - https://github.com/minetest-mods/mesecons
 4. areas - https://github.com/ShadowNinja/areas
+5. worldedit - https://github.com/Uberi/Minetest-WorldEdit
