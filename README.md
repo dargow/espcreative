@@ -10,7 +10,7 @@ Current mods:
 2. army - Fixed. removed non-creative items (gun, bullet, etc...)
 3. beverage - Updated to new version.
 4. birthstones - Fixed. removed non-creative items
-5. blox
+5. blox - Fixed
 6. bridges
 7. carts
 8. cblocks
@@ -81,7 +81,7 @@ Current mods:
 73. travelnet
 74. tronblocks
 75. unifiedbricks
-76. unifieddyes
+76. unifieddyes - Updated
 77. windmill
 78. wine
 79. worldedit_modpack
