@@ -4,7 +4,10 @@ This mod adds coloured wood and stonebrick blocks to the game without the need f
 
 https://forum.minetest.net/viewtopic.php?f=9&t=13303
 
-Released under WTFPL
 
-0.1 - Initial release
-0.2 - Added coloured glass and fixed violet
+Change log:
+
+- 0.1 - Initial release
+- 0.2 - Added coloured glass and fixed violet
+
+Lucky Blocks: 4

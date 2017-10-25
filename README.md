@@ -7,14 +7,14 @@ Update and clean mods so we can fix the server.
 
 Current mods:
 1. areas - Updated to new version
-2. army - Fixed. removed non-creative items (gun, bullet, etc...)
+2. army - Fixed. removed non-creative itemsDD (gun, bullet, etc...)
 3. beverage - Updated to new version.
 4. birthstones - Fixed. removed non-creative items
 5. blox - Fixed
-6. bridges
-7. carts
-8. cblocks
-9. colored_steel
+6. bridges - Works. Not need fix
+7. carts - removed. not need on 0.4.16
+8. cblocks - Updated
+9. colored_steel - Fixed
 10. colormashine
 11. cottages
 12. crops

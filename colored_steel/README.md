@@ -1,4 +1,4 @@
-#colored_steel by cd2
+#colored_steel by cdqwertz
 
 #description
 This mod adds some new steel blocks and ingots
