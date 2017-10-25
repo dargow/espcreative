@@ -94,4 +94,5 @@ These mods are not included in the repo because the current versions should be u
 
 1. sban - https://github.com/shivajiva101/sban
 2. mese_restriction - https://github.com/Ezhh/mese_restriction
-3. areas - https://github.com/ShadowNinja/areas
+3. mesecons - https://github.com/minetest-mods/mesecons
+4. areas - https://github.com/ShadowNinja/areas
