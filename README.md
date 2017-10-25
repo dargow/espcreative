@@ -8,8 +8,8 @@ Update and clean mods so we can fix the server.
 Current mods:
 1. areas - Updated to new version
 2. army - Fixed. removed non-creative items (gun, bullet, etc...)
-3. beverage
-4. birthstones
+3. beverage - Updated to new version.
+4. birthstones - Fixed. removed non-creative items
 5. blox
 6. bridges
 7. carts

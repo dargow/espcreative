@@ -39,14 +39,13 @@ You can add your own drinks by using the following template:
                   })
 
 Changelog
-
-
-
+      
     1.7
 	Cleaned code
 	License changed from WTFPL to MIT
 	You have to use fire to boil hot beverages
-
+  
+  
     1.6
 	Deleted unnecessary codes (kadeh etc)
 	More coins added
