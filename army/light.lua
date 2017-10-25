@@ -17,11 +17,3 @@ minetest.register_node("army:light",{
 	},
 })
 
-minetest.register_craft({
-	output = "army:light",
-	recipe = {
-		{"default:glass"},
-		{"default:torch"},
-		{"default:steel_ingot"},
-	}
-})

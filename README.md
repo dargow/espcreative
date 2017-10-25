@@ -6,8 +6,8 @@ Aim
 Update and clean mods so we can fix the server.
 
 Current mods:
-1. areas
-2. army
+1. areas - Updated to new version
+2. army - Fixed. removed non-creative items (gun, bullet, etc...)
 3. beverage
 4. birthstones
 5. blox
