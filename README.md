@@ -32,7 +32,7 @@ Current mods:
 24. homedecor_modpack
 25. ilights
 26. infrastructure
-27. interact
+27. interact - Removed. Must be replace to other same mod 
 28. inventory_plus
 29. jumping
 30. lapis
@@ -55,12 +55,12 @@ Current mods:
 47. mymeshnodes
 48. mymillwork
 49. mymulch
-50. my paths
+50. mypaths
 51. myroofs
 52. myshetmetal
 53. mysponge
 54. mywoodslopes
-55. names_per_ip
+55. names_per_ip - Removed. Not need more
 56. nether
 57. octutool
 58. pipeworks
@@ -70,23 +70,23 @@ Current mods:
 62. quartz
 63. rainbow_ore
 64. roofblocks
-65. signs_lib
+65. signs_lib - Updated
 66. slimenodes
 67. snow
 68. snowdrift
-69. spectator_mode
-70. steel
-71. telemosaic
-72. torches
-73. travelnet
-74. tronblocks
-75. unifiedbricks
+69. spectator_mode - Updated
+70. steel - Fixed
+71. telemosaic - Works. Nothig do
+72. torches - ??? Probably need remove
+73. travelnet - Updated
+74. tronblocks - ??? Probably need remove
+75. unifiedbricks - Updated
 76. unifieddyes - Updated
-77. windmill
-78. wine
+77. windmill - Fixed
+78. wine - Updated
 79. worldedit_modpack - Removed - use official repo
-80. xdecor
-81. xtraores
+80. xdecor - Updated
+81. xtraores - Removed. Non-creative stuff
 
 Additional Mods
 ---

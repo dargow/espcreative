@@ -1,7 +1,7 @@
 default
-doors
-xpanes
 bucket
+doors
 stairs
+xpanes
+fire?
 oresplus?
-3d_armor?

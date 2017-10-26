@@ -54,24 +54,6 @@ windmill.register_windmill = function( nodename, descr, animation_png, animation
 
     })
 
-    minetest.register_craft({
-        output = nodename.."_reverse",
-        recipe = {{ nodename }},
-    }) 
-
-    minetest.register_craft({
-        output = nodename,
-        recipe = {{ nodename.."_reverse" }},
-    })
-
-    minetest.register_craft({
-        output = nodename,
-        recipe = {
-                { craft_material,       "",                    craft_material },
-                { "",                   "default:stick",       "",             },
-                { craft_material,       "",                    craft_material },
-        }
-})
 end
 
 
@@ -117,9 +99,3 @@ minetest.register_node("windmill:axis", {
 })
 
 
-minetest.register_craft({
-        output = "windmill:axis",
-        recipe = {
-                {"default:steel_ingot", "default:stick",       "default:steel_ingot" },
-        }
-})
