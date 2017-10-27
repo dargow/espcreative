@@ -77,7 +77,7 @@ Current mods:
 69. spectator_mode - Updated
 70. steel - Fixed
 71. telemosaic - Works. Nothig do
-72. torches - ??? Probably need remove
+72. torches - Removed - now in MTG
 73. travelnet - Updated
 74. tronblocks - ??? Probably need remove
 75. unifiedbricks - Updated
