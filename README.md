@@ -86,7 +86,7 @@ Current mods:
 78. wine - Updated
 79. worldedit_modpack - Removed - use official repo
 80. xdecor - Updated
-81. xtraores - Removed. Non-creative stuff
+81. xtraores - Added. Need fix
 
 Additional Mods
 ---
