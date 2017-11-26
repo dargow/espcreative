@@ -1,13 +1,14 @@
 -- 22.01.13 Changed texture to that of the wood from the minimal development game
 
+local S = cottages.S
+
 minetest.register_node("cottages:fence_small", {
-		description = "small fence",
+		description = S("small fence"),
 		drawtype = "nodebox",
                 -- top, bottom, side1, side2, inner, outer
 		tiles = {"cottages_minimal_wood.png"},
 		paramtype = "light",
 		paramtype2 = "facedir",
-		is_ground_content = true,
 		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2},
 		node_box = {
 			type = "fixed",
@@ -26,17 +27,17 @@ minetest.register_node("cottages:fence_small", {
 				{ -0.50, -0.50, 0.4,  0.50,  0.50,  0.5},
 			},
 		},
+		is_ground_content = false,
 })
 
 
 minetest.register_node("cottages:fence_corner", {
-		description = "small fence corner",
+		description = S("small fence corner"),
 		drawtype = "nodebox",
                 -- top, bottom, side1, side2, inner, outer
 		tiles = {"cottages_minimal_wood.png"},
 		paramtype = "light",
 		paramtype2 = "facedir",
-		is_ground_content = true,
 		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2},
 		node_box = {
 			type = "fixed",
@@ -62,17 +63,17 @@ minetest.register_node("cottages:fence_corner", {
 				{ -0.50, -0.50,-0.5,  0.50,  0.50,  0.5},
 			},
 		},
+		is_ground_content = false,
 })
 
 
 minetest.register_node("cottages:fence_end", {
-		description = "small fence end",
+		description = S("small fence end"),
 		drawtype = "nodebox",
                 -- top, bottom, side1, side2, inner, outer
 		tiles = {"cottages_minimal_wood.png"},
 		paramtype = "light",
 		paramtype2 = "facedir",
-		is_ground_content = true,
 		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2},
 		node_box = {
 			type = "fixed",
@@ -105,53 +106,6 @@ minetest.register_node("cottages:fence_end", {
 				{ -0.50, -0.50,-0.5,  0.50,  0.50,  0.5},
 			},
 		},
+		is_ground_content = false,
 })
-
-minetest.register_craft({
-	output = "cottages:fence_small 3",
-	recipe = {
-		{"default:fence_wood","default:fence_wood" },
-	}
-})
-
--- xfences can be configured to replace normal fences - which makes them uncraftable
-if ( minetest.get_modpath("xfences") ~= nil ) then
-   minetest.register_craft({
-	output = "cottages:fence_small 3",
-	recipe = {
-		{"xfences:fence","xfences:fence" },
-	}
-   })
-end
-
-minetest.register_craft({
-	output = "cottages:fence_corner",
-	recipe = {
-		{"cottages:fence_small","cottages:fence_small" },
-	}
-})
-
-minetest.register_craft({
-	output = "cottages:fence_small 2",
-	recipe = {
-		{"cottages:fence_corner" },
-	}
-})
-
-minetest.register_craft({
-	output = "cottages:fence_end",
-	recipe = {
-		{"cottages:fence_small","cottages:fence_small", "cottages:fence_small" },
-	}
-})
-
-minetest.register_craft({
-	output = "cottages:fence_small 3",
-	recipe = {
-		{"cottages:fence_end" },
-	}
-})
-
-
-
 

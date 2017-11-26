@@ -179,62 +179,7 @@ end end
 
 -- Make tin versions of cold beverages. You can get them from vending machine
 
-if def.heat == "cold" then 
 
-  	minetest.register_node("beverage:"..name.."_tin", {
-		description = description..S(" Tin"),
-		drawtype = "nodebox",
-		use_texture_alpha = true,
-		paramtype = "light",
-		inventory_image = tininv,
-		is_ground_content = false,
-		walkable = false,
-		groups = {dig_immediate=3,attached_node=1},
-		stack_max = 20,
-		on_use =  function(itemstack, user, pointed_thing)
-				minetest.sound_play("beverage_cold", {
-				pos = pos, gain = 0.7, hear_distance = 5})
-						   
-			   	if minetest.get_modpath("thirsty") then
-						thirsty.drink(user, 5, 20)
-					else
-						minetest.item_eat(5)
-					end
-          
-          itemstack:take_item()
-          return itemstack
-		end,
-		tiles = {
-		"beverage_tintop.png",
-		"default_steel_block.png",
-		"(cup.png^[colorize:"..liquidcolour..")^"..tintile,
-		"(cup.png^[colorize:"..liquidcolour..")^"..tintile,
-		"(cup.png^[colorize:"..liquidcolour..")^"..tintile,
-		"(cup.png^[colorize:"..liquidcolour..")^"..tintile
-            },
-		node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.125, -0.5, -0.125, 0.125, -0.125, 0.125}, -- front
-		}
-	}
-		
-	})
-
-	
-	
--- Crafting for cold beverages ( You can cook hot beverages with Kettle )
-	
-	minetest.register_craft({
-	output = 'beverage:'..name,
-	recipe = {
-		{'', recipe, ''},
-		{'', recipe2, ''},
-		{'', 'vessels:drinking_glass', ''},
-			 }
-	})
-	
-end
  
 	-- Steam animation for hot drinks
 	-- From farming plusplus mod by MTDad
@@ -362,7 +307,7 @@ minetest.register_node("beverage:vending", {
 
 	
 	
-
+minetest.register_alias("beverage:*_tin", "air")
 
 ---------------------------
 ---------------------------	

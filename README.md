@@ -12,12 +12,12 @@ Current mods:
 4. birthstones - Fixed. removed non-creative items
 5. blox - Fixed
 6. bridges - Works. Not need fix
-7. carts - removed. not need on 0.4.16
+--7. carts - removed. not need on 0.4.16
 8. cblocks - Updated
 9. colored_steel - Fixed
-10. colormashine
-11. cottages
-12. crops
+10. colormashine - Updated and Fixed
+11. cottages - Updated and Fixed
+12. crops - Fixed partically
 13. cutepie
 14. doors_modular
 15. digilines
