@@ -1,83 +1,83 @@
 minetest.register_node( "birthstones:alexandriteblock", {
 	description = "Alexandrite Block",
-	tile_images = { "Alexandrite_block.png" },
+	tiles = { "Alexandrite_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:amethystblock", {
 	description = "Amethyst Block",
-	tile_images = { "Amethyst_block.png" },
+	tiles = { "Amethyst_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:aquamarineblock", {
 	description = "Aquamarine Block",
-	tile_images = { "Aquamarine_block.png" },
+	tiles = { "Aquamarine_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:diamondblock", {
 	description = "Diamond Block",
-	tile_images = { "Diamond_block.png" },
+	tiles = { "Diamond_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:emeraldblock", {
 	description = "Emerald Block",
-	tile_images = { "Emerald_block.png" },
+	tiles = { "Emerald_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:garnetblock", {
 	description = "Garnet Block",
-	tile_images = { "Garnet_block.png" },
+	tiles = { "Garnet_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:opalblock", {
 	description = "Opal Block",
-	tile_images = { "Opal_block.png" },
+	tiles = { "Opal_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:peridotblock", {
 	description = "Peridot Block",
-	tile_images = { "Peridot_block.png" },
+	tiles = { "Peridot_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:rubyblock", {
 	description = "Ruby Block",
-	tile_images = { "Ruby_block.png" },
+	tiles = { "Ruby_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:sapphireblock", {
 	description = "Sapphire Block",
-	tile_images = { "Sapphire_block.png" },
+	tiles = { "Sapphire_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:topazblock", {
 	description = "Topaz Block",
-	tile_images = { "Topaz_block.png" },
+	tiles = { "Topaz_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_node( "birthstones:zirconblock", {
 	description = "Zircon Block",
-	tile_images = { "Zircon_block.png" },
+	tiles = { "Zircon_block.png" },
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),

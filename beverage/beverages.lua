@@ -85,25 +85,25 @@ beverage.support("apple", {
 	"fruit:apple",
 	"ethereal:golden_apple",
 	"ironapple:apple_iron",
-	"beverage:applejuice"
+--	"beverage:applejuice"
 })
 
 
 
 beverage.support("chocolate", {
 	"farming_plus:cocoa_bean",
-	"farming:cocoa_beans",
+--	"farming:cocoa_beans",
 	"food:cocoa",
 	"food:chocolate_powder",
 	"mtfoods:chocolate",
-	"farming:chocolate_dark",
+--	"farming:chocolate_dark",
 	"foodblock:chocod_block",
 	"food:dark_chocolate",
 	"foodblock:chocod_block_slab",
 	"foodblock:chocom_block",
 	"food:milk_chocolate",
 	"plants:cacao_wild",
-	"beverage:hotchocolate"
+--	"beverage:hotchocolate"
 })
 
 beverage.support("orange", {
@@ -113,7 +113,7 @@ beverage.support("orange", {
 	"fruit:orange",
 	"foodblock:orangeblock",
 	"foodblock:orangeblock_slab",
-	"beverage:orangejuice"
+--	"beverage:orangejuice"
 })
 
 beverage.support("milk", {
@@ -124,7 +124,7 @@ beverage.support("milk", {
 	"mobs:beverage_milk",
 	"food:milk",
 	"foodblock:milkblock",
-	"beverage:milk"
+--	"beverage:milk"
 })
 
 beverage.support("flower", {
@@ -136,33 +136,33 @@ beverage.support("flower", {
 	"plants:aloe_wild",
 	"plants:lavender_wild",
 	"plants:grass_wild",
-	"beverage:greentea"
+--	"beverage:greentea"
 })
 
 
 beverage.support("lemon", {
 	"food_sweet:lemon",
 	"farming_plus:lemon_item",
-	"beverage:lemonade"
+--	"beverage:lemonade"
 
 })
 
 beverage.support("coffee", {
-	"farming:coffee_beans",
+--	"farming:coffee_beans",
 	"farming_plus:coffee_beans",
-	"beverage:coffee"
+--	"beverage:coffee"
 })
 
 beverage.support("coconut", {
 	"foodblock:cocoblock",
 	"foodblock:cocoblock_slab",
-	"farming:cucumber",
+--	"farming:cucumber",
 	"moretrees:coconut_milk",
 	"moretrees:raw_coconut",
 	"docfarming:cucumber",
 	"mtfoods:dandelion_milk",
 	"ethereal:coconut_slice",
-	"beverage:coconutmilk"
+--	"beverage:coconutmilk"
 })
 
 beverage.support("berry", {
@@ -170,7 +170,7 @@ beverage.support("berry", {
 	"plantlib:strawberry",
 	"farming_plus:rhubarb_item",
 	"bushes:strawberry",
-	"beverage:berryjuice"
+--	"beverage:berryjuice"
 })
 		
 
@@ -181,7 +181,7 @@ beverage.support("water", {
 			"default:river_water_source",
 			"default:river_water_flowing",
 			"bucket:bucket_river_water",
-			"beverage:drinkingwater"
+--			"beverage:drinkingwater"
 })		
 
 
