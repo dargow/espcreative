@@ -3,10 +3,6 @@ local crazy_blocks = {
 	{"cute_greenx","Cutepie Green X"},
 	{"cute_greennorange","Cutepie Green n Orange"},
 	{"cute_bluex","Cutepie Blue X"},
-	{"cute_pink","Cutepie Pink"},
-	{"cute_blue","Cutepie Blue"},
-	{"cute_orange","Cutepie Orange"},
-	{"cute_green","Cutepie Green"}
 	}
 
 for i in ipairs(crazy_blocks) do
