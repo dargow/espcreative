@@ -73,7 +73,7 @@ Current mods:
 65. signs_lib - Updated
 66. slimenodes
 67. snow
-68. snowdrift
+--68. snowdrift - Removed. Non-creative mod
 69. spectator_mode - Updated
 70. steel - Fixed
 71. telemosaic - Works. Nothig do
@@ -87,6 +87,7 @@ Current mods:
 79. worldedit_modpack - Removed - use official repo
 80. xdecor - Updated
 81. xtraores - Added. Need fix
+82. aliases - Added. For aliases and other changes
 
 Additional Mods
 ---

@@ -1,5 +1,5 @@
 default
-bucket
+bucket?
 doors
 stairs
 xpanes
