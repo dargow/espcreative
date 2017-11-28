@@ -17,8 +17,8 @@ Current mods:
 9. colored_steel - Fixed
 10. colormashine - Updated and Fixed
 11. cottages - Updated and Fixed
-12. crops - Fixed partically. Probably need remove seeds.
-13. cutepie - Fixed 
+12. crops - Fixed partically
+13. cutepie
 14. doors_modular
 15. digilines
 16. factory_bridges - Removed recipes.
