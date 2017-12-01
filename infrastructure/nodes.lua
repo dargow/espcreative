@@ -6,6 +6,7 @@
 		tile_images = {"infrastructure_asphalt.png"},
 		drawtype = "normal",
 		groups = {cracky = 1},
+		sounds = default.node_sound_stone_defaults()
 	})
 	minetest.register_alias("asphalt", "infrastructure:asphalt")
 
@@ -16,6 +17,7 @@
 		drawtype = "normal",
 		paramtype = "light",
 		groups = {cracky = 2},
+		sounds = default.node_sound_stone_defaults()
 	})
 	minetest.register_alias("concrete", "infrastructure:concrete")
 
@@ -405,106 +407,141 @@
 		}
 	})
 
--- Concrete grid paver
---	minetest.register_node("infrastructure:precast_concrete_grid_paver", {
---		description = "Precast concrete grid paver",
---		tile_images = {
---			"infrastructure_grid_paver_top.png",
---			"infrastructure_grid_paver_bottom.png",
---			"infrastructure_concrete.png",
---			"infrastructure_concrete.png"
---			"infrastructure_concrete.png",
---			"infrastructure_concrete.png"
---		},
---		drawtype = "nodebox",
---		paramtype = "light",
---		paramtype2 = "facedir",
---		groups = {cracky = 2},
---		node_box = {
---			type = "fixed",
---			fixed = {
---				{-1/2, -1/2, -1/2, 1/2, -1/2, 1/2},
---				{-1/2, -1/2 + 1/128, -1/2, 1/2, -1/2 + 1/128, 1/2},
---				{-1/2, -1/2 + 2/128, -1/2, 1/2, -1/2 + 2/128, 1/2},
---				{-1/2, -1/2 + 3/128, -1/2, 1/2, -1/2 + 3/128, 1/2},
---				{-1/2, -1/2 + 4/128, -1/2, 1/2, -1/2 + 4/128, 1/2},
---				{-1/2, -1/2 + 5/128, -1/2, 1/2, -1/2 + 5/128, 1/2},
---				{-1/2, -1/2 + 6/128, -1/2, 1/2, -1/2 + 6/128, 1/2},
---				{-1/2, -1/2 + 7/128, -1/2, 1/2, -1/2 + 7/128, 1/2},
---				{-1/2, -1/2 + 8/128, -1/2, 1/2, -1/2 + 8/128, 1/2},
---			}
---		},
---		selection_box = {
---			type = "fixed",
---			fixed = {-1/2, -1/2, -1/2, 1/2, -1/2 + 8/128, 1/2}
---		},
---
---		after_place_node = function(pos)
---			local param2 = node.param2
---			pos.y = pos.y - 1
---			local node = minetest.env:get_node(pos)
---			if (node.name == "default:dirt_with_grass") then
---				pos.y = pos.y + 1
---				mesecon:swap_node(pos, "infrastructure:precast_concrete_grid_paver_with_grass")
---			end
---		end
---	})
+-- Concrete sticks
+	minetest.register_node("infrastructure:precast_concrete_stick_vertical", {
+		description = "Precast concrete stick vertical",
+		tile_images = {"infrastructure_concrete.png"},
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky = 2},
+		node_box = {
+			type = "fixed",
+			fixed = {-1/8, -1/2, -1/8, 1/8, 1/2, 1/8}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/8, -1/2, -1/8, 1/8, 1/2, 1/8}
+		}
+	})
 
---	minetest.register_node("infrastructure:precast_concrete_grid_paver_with_grass", {
---		description = "Precast concrete grid paver with grass",
---		tile_images = {
---			"infrastructure_grid_paver_top.png",
---			"infrastructure_grid_paver_bottom.png",
---			"infrastructure_grid_paver_grass.png",
---			"infrastructure_grid_paver_grass.png",
---			"infrastructure_grid_paver_grass.png",
---			"infrastructure_grid_paver_grass.png"
---		},
---		drawtype = "nodebox",
---		paramtype = "light",
---		paramtype2 = "facedir",
---		groups = {cracky = 2},
---		drop = "infrastructure:precast_concrete_grid_paver",
---		node_box = {
---			type = "fixed",
---			fixed = {
---				{-1/2, -1/2, -1/2, 1/2, -1/2, 1/2},
---				{-1/2, -1/2 + 1/128, -1/2, 1/2, -1/2 + 1/128, 1/2},
---				{-1/2, -1/2 + 2/128, -1/2, 1/2, -1/2 + 2/128, 1/2},
---				{-1/2, -1/2 + 3/128, -1/2, 1/2, -1/2 + 3/128, 1/2},
---				{-1/2, -1/2 + 4/128, -1/2, 1/2, -1/2 + 4/128, 1/2},
---				{-1/2, -1/2 + 5/128, -1/2, 1/2, -1/2 + 5/128, 1/2},
---				{-1/2, -1/2 + 6/128, -1/2, 1/2, -1/2 + 6/128, 1/2},
---				{-1/2, -1/2 + 7/128, -1/2, 1/2, -1/2 + 7/128, 1/2},
---				{-1/2, -1/2 + 8/128, -1/2, 1/2, -1/2 + 8/128, 1/2},
---
---				{-3/8, -1/2, 1/4, -1/8, 0, 1/4},
---				{1/8, -1/2, 1/4, 3/8, 0, 1/4},
---
---				{-1/8, -1/2, 0, 1/8, 0, 0},
---
---				{-3/8, -1/2, -1/4, -1/8, 0, -1/4},
---				{1/8, -1/2, -1/4, 3/8, 0, -1/4},
---
---				{1/4, -1/2, -3/8, 1/4, 0, -1/8},
---				{1/4, -1/2, 1/8, 1/4, 0, 3/8},
---
---				{0, -1/2, -1/8, 0, 0, 1/8},
---
---				{-1/4, -1/2, -3/8, -1/4, 0, -1/8},
---				{-1/4, -1/2, 1/8, -1/4, 0, 3/8}
---			}
---		},
---		selection_box = {
---			type = "fixed",
---			fixed = {-1/2, -1/2, -1/2, 1/2, -1/2 + 8/128, 1/2}
---		},
---
---		on_punch = function(pos, node)
---			mesecon:swap_node(pos, "infrastructure:precast_concrete_grid_paver")
---		end
---	})
---
+	minetest.register_node("infrastructure:precast_concrete_stick_horizontal", {
+		description = "Precast concrete stick horizontal",
+		tile_images = {"infrastructure_concrete.png"},
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky = 2},
+		node_box = {
+			type = "fixed",
+			fixed = {-1/8, -1/8, -1/2, 1/8, 1/8, 1/2}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/8, -1/8, -1/2, 1/8, 1/8, 1/2}
+		}
+	})
+
+-- Concrete grid paver
+	minetest.register_node("infrastructure:precast_concrete_grid_paver", {
+		description = "Precast concrete grid paver",
+		tile_images = {
+			"infrastructure_grid_paver_top.png",
+			"infrastructure_grid_paver_bottom.png",
+			"infrastructure_concrete.png",
+			"infrastructure_concrete.png",
+			"infrastructure_concrete.png",
+			"infrastructure_concrete.png"
+		},
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky = 2},
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, -1/2, -1/2, 1/2, -1/2, 1/2},
+				{-1/2, -1/2 + 1/128, -1/2, 1/2, -1/2 + 1/128, 1/2},
+				{-1/2, -1/2 + 2/128, -1/2, 1/2, -1/2 + 2/128, 1/2},
+				{-1/2, -1/2 + 3/128, -1/2, 1/2, -1/2 + 3/128, 1/2},
+				{-1/2, -1/2 + 4/128, -1/2, 1/2, -1/2 + 4/128, 1/2},
+				{-1/2, -1/2 + 5/128, -1/2, 1/2, -1/2 + 5/128, 1/2},
+				{-1/2, -1/2 + 6/128, -1/2, 1/2, -1/2 + 6/128, 1/2},
+				{-1/2, -1/2 + 7/128, -1/2, 1/2, -1/2 + 7/128, 1/2},
+				{-1/2, -1/2 + 8/128, -1/2, 1/2, -1/2 + 8/128, 1/2},
+			}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/2, -1/2, -1/2, 1/2, -1/2 + 8/128, 1/2}
+		},
+
+		after_place_node = function(pos)
+			local param2 = node.param2
+			pos.y = pos.y - 1
+			local node = minetest.env:get_node(pos)
+			if (node.name == "default:dirt_with_grass") then
+				pos.y = pos.y + 1
+				mesecon:swap_node(pos, "infrastructure:precast_concrete_grid_paver_with_grass")
+			end
+		end
+	})
+
+	minetest.register_node("infrastructure:precast_concrete_grid_paver_with_grass", {
+		description = "Precast concrete grid paver with grass",
+		tile_images = {
+			"infrastructure_grid_paver_top.png",
+			"infrastructure_grid_paver_bottom.png",
+			"infrastructure_grid_paver_grass.png",
+			"infrastructure_grid_paver_grass.png",
+			"infrastructure_grid_paver_grass.png",
+			"infrastructure_grid_paver_grass.png"
+		},
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky = 2},
+		drop = "infrastructure:precast_concrete_grid_paver",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, -1/2, -1/2, 1/2, -1/2, 1/2},
+				{-1/2, -1/2 + 1/128, -1/2, 1/2, -1/2 + 1/128, 1/2},
+				{-1/2, -1/2 + 2/128, -1/2, 1/2, -1/2 + 2/128, 1/2},
+				{-1/2, -1/2 + 3/128, -1/2, 1/2, -1/2 + 3/128, 1/2},
+				{-1/2, -1/2 + 4/128, -1/2, 1/2, -1/2 + 4/128, 1/2},
+				{-1/2, -1/2 + 5/128, -1/2, 1/2, -1/2 + 5/128, 1/2},
+				{-1/2, -1/2 + 6/128, -1/2, 1/2, -1/2 + 6/128, 1/2},
+				{-1/2, -1/2 + 7/128, -1/2, 1/2, -1/2 + 7/128, 1/2},
+				{-1/2, -1/2 + 8/128, -1/2, 1/2, -1/2 + 8/128, 1/2},
+
+				{-3/8, -1/2, 1/4, -1/8, 0, 1/4},
+				{1/8, -1/2, 1/4, 3/8, 0, 1/4},
+
+				{-1/8, -1/2, 0, 1/8, 0, 0},
+
+				{-3/8, -1/2, -1/4, -1/8, 0, -1/4},
+				{1/8, -1/2, -1/4, 3/8, 0, -1/4},
+
+				{1/4, -1/2, -3/8, 1/4, 0, -1/8},
+				{1/4, -1/2, 1/8, 1/4, 0, 3/8},
+
+				{0, -1/2, -1/8, 0, 0, 1/8},
+
+				{-1/4, -1/2, -3/8, -1/4, 0, -1/8},
+				{-1/4, -1/2, 1/8, -1/4, 0, 3/8}
+			}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/2, -1/2, -1/2, 1/2, -1/2 + 8/128, 1/2}
+		},
+
+		on_punch = function(pos, node)
+			mesecon:swap_node(pos, "infrastructure:precast_concrete_grid_paver")
+		end
+	})
+
 -- **************************************************************************************************** STEEL STRUCTURES
 
 -- Truss
@@ -600,6 +637,93 @@
 		}
 	})
 
+-- Louver
+	minetest.register_node("infrastructure:louver_opened", {
+		description = "Louver",
+		tile_images = {"infrastructure_galvanized_steel.png"},
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky = 2},
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, 7/16, 0, 1/2, 1/2, 1/2},
+				{-1/2, -1/16, 0, 1/2, 0, 1/2}
+			}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, 7/16, 0, 1/2, 1/2, 1/2},
+				{-1/2, -1/16, 0, 1/2, 0, 1/2}
+			}
+		},
+
+		on_punch = function(pos, node)
+			minetest.swap_node(pos, {name = "infrastructure:louver_closed", param2 = node.param2})
+		end
+	})
+
+	minetest.register_node("infrastructure:louver_closed", {
+		tile_images = {"infrastructure_galvanized_steel.png"},
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky = 2},
+		drop = "infrastructure:louver_opened",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, 1/16, 7/16, 1/2, 1/2, 1/2},
+				{-1/2, -7/16, 7/16, 1/2, 0, 1/2}
+			}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1/2, 1/16, 7/16, 1/2, 1/2, 1/2},
+				{-1/2, -7/16, 7/16, 1/2, 0, 1/2}
+			}
+		},
+
+		on_punch = function(pos, node)
+			minetest.swap_node(pos, {name = "infrastructure:louver_opened", param2 = node.param2})
+		end
+	})
+
+	minetest.register_alias("infrastructure:louver", "infrastructure:louver_opened")
+
+-- Riffled sheet
+	minetest.register_node("infrastructure:riffled_sheet", {
+		description = "Riffled sheet",
+		tile_images = {"infrastructure_riffled_sheet.png"},
+		inventory_image = "infrastructure_riffled_sheet.png",
+		wield_image = "infrastructure_riffled_sheet.png",
+		drawtype = "nodebox",
+		paramtype = "light",
+		groups = {cracky = 2, oddly_breakable_by_hand = 1},
+		node_box = {
+			type = "fixed",
+			fixed = {-1/2, -1/2, -1/2, 1/2, -1/2 + 0.001, 1/2}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {-1/2, -1/4, -1/2, 1/2, -1/2 + 0.01, 1/2}
+		}
+	})
+
+-- Corrugated sheet
+	minetest.register_node("infrastructure:corrugated_sheet", {
+		description = "corrugated sheet",
+		tile_images = {"infrastructure_corrugated_sheet.png"},
+		inventory_image = "infrastructure_corrugated_sheet.png",
+		wield_image = "infrastructure_corrugated_sheet.png",
+		drawtype = "raillike",
+		paramtype = "light",
+		groups = {cracky = 2, oddly_breakable_by_hand = 1},
+	})
+
 -- **************************************************************************************************** ADVANCED ITEMS
 
 -- Displacement
@@ -636,6 +760,7 @@
 		paramtype = "light",
 		paramtype2 = "facedir",
 		groups = {cracky = 3},
+		walkable = false,
 		light_source = MARKER_LIGHT_RANGE,
 		sunlight_propagates = true,
 		node_box = {
@@ -676,6 +801,7 @@
 			paramtype = "light",
 			paramtype2 = "facedir",
 			groups = {cracky = 3, not_in_creative_inventory = 1},
+			walkable = false,
 			light_source = MARKER_LIGHT_RANGE,
 			sunlight_propagates = true,
 			drop = "infrastructure:marker_yellow_yellow",
@@ -715,6 +841,7 @@
 		paramtype = "light",
 		paramtype2 = "facedir",
 		groups = {cracky = 3},
+		walkable = false,
 		light_source = MARKER_LIGHT_RANGE,
 		sunlight_propagates = true,
 		node_box = {
@@ -755,6 +882,7 @@
 			paramtype = "light",
 			paramtype2 = "facedir",
 			groups = {cracky = 3, not_in_creative_inventory = 1},
+			walkable = false,
 			light_source = MARKER_LIGHT_RANGE,
 			sunlight_propagates = true,
 			drop = "infrastructure:marker_red_yellow",

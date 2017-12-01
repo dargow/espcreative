@@ -322,6 +322,31 @@ Crafting recipes:
 			STEEL_INGOT |             | STEEL_INGOT
 
 
+		Louver (2 pcs)
+
+			STEEL_INGOT
+			-----------
+
+			-----------
+			STEEL_INGOT
+
+
+		Sheet
+
+			Riffled (4 pcs)
+
+				GALVANIZED_STEEL       | FENCE_GALVANIZED_STEEL
+				-----------------------+-----------------------
+				FENCE_GALVANIZED_STEEL | GALVANIZED_STEEL
+
+
+			Corrugated (4 pcs)
+
+				GALVANIZED_STEEL | FENCE_GALVANIZED_STEEL
+				-----------------+-----------------------
+				GALVANIZED_STEEL | FENCE_GALVANIZED_STEEL
+
+
 
 	Advanced items:
 

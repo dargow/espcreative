@@ -339,6 +339,34 @@
 		}
 	})
 
+-- Louver
+	minetest.register_craft({
+		output = '"infrastructure:drainage_channel_grating" 2',
+		recipe = {
+			{'default:steel_ingot'},
+			{''},
+			{'default:steel_ingot'}
+		}
+	})
+
+-- Riffled sheet
+	minetest.register_craft({
+		output = '"infrastructure:riffled_sheet" 4',
+		recipe = {
+			{'infrastructure:galvanized_steel', 'infrastructure:fence_galvanized_steel'},
+			{'infrastructure:fence_galvanized_steel', 'infrastructure:galvanized_steel'}
+		}
+	})
+
+-- Corrugated sheet
+	minetest.register_craft({
+		output = '"infrastructure:riffled_sheet" 4',
+		recipe = {
+			{'infrastructure:galvanized_steel', 'infrastructure:fence_galvanized_steel'},
+			{'infrastructure:galvanized_steel', 'infrastructure:fence_galvanized_steel'}
+		}
+	})
+
 -- **************************************************************************************************** ADVANCED ITEMS
 
 -- Raised pavement marker yellow/yellow

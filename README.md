@@ -50,7 +50,7 @@ Current mods:
 42. myholeinthewall
 43. myladders
 44. mylandscaping
-45. mylights
+45. mylights - updateed, but old nodes on map can be "unknown"
 46. mymasonhammer
 47. mymeshnodes
 48. mymillwork
@@ -88,6 +88,7 @@ Current mods:
 80. xdecor - Updated
 81. xtraores - Added. Need fix
 82. aliases - Added. For aliases and other changes
+83. sfinv_buttons - added/
 
 Additional Mods
 ---
@@ -95,6 +96,6 @@ These mods are not included in the repo because the current versions should be u
 
 1. sban - https://github.com/shivajiva101/sban
 2. mese_restriction - https://github.com/Ezhh/mese_restriction
-3. mesecons - https://github.com/minetest-mods/mesecons
+--3. mesecons - https://github.com/minetest-mods/mesecons
 4. areas - https://github.com/ShadowNinja/areas
 5. worldedit - https://github.com/Uberi/Minetest-WorldEdit

@@ -9,7 +9,6 @@ hardenedclay?
 clstone?
 colorcubes?
 colouredstonebricks?
-lavalamp?
 myroofs?
 mydeck?
 mycorners?
