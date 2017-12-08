@@ -86,9 +86,9 @@ Current mods:
 78. wine - Updated
 79. worldedit_modpack - Removed - use official repo
 80. xdecor - Updated
-81. xtraores - Added. Need fix
+81. xtraores - Fixed
 82. aliases - Added. For aliases and other changes
-83. sfinv_buttons - added/
+
 
 Additional Mods
 ---
@@ -96,6 +96,6 @@ These mods are not included in the repo because the current versions should be u
 
 1. sban - https://github.com/shivajiva101/sban
 2. mese_restriction - https://github.com/Ezhh/mese_restriction
---3. mesecons - https://github.com/minetest-mods/mesecons
+3. mesecons - https://github.com/minetest-mods/mesecons - moved to mod list
 4. areas - https://github.com/ShadowNinja/areas
 5. worldedit - https://github.com/Uberi/Minetest-WorldEdit
