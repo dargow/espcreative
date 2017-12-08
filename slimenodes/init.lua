@@ -127,7 +127,7 @@ minetest.register_node("slimenodes:slime_solid_cyan", {
 	description = "cyan solid slime",
 	tiles = { "slimenodes_solidslime_cyan.png" },
 	walkable = true,
-	groups = {slimey=3, level=1},
+	groups = {cracky=1},
 	sounds = {
 		dig = {name="slimenodes_dig", gain=0.3},
 		dug = {name="slimenodes_dug", gain=0.6},
@@ -140,7 +140,7 @@ minetest.register_node("slimenodes:slime_solid_green", {
 	description = "green solid slime",
 	tiles = { "slimenodes_solidslime_green.png" },
 	walkable = true,
-	groups = {slimey=3, fall_damage_add_percent=-10, level=2},
+	groups = {cracky=1},
 	sounds = {
 		dig = {name="slimenodes_dig", gain=0.3},
 		dug = {name="slimenodes_dug", gain=0.6},
@@ -153,7 +153,7 @@ minetest.register_node("slimenodes:slime_solid_orange", {
 	description = "orange solid slime",
 	tiles = { "slimenodes_solidslime_orange.png" },
 	walkable = true,
-	groups = {slimey=3, fall_damage_add_percent=-20, level=2, flammable=1},
+	groups = {cracky=1},
 	sounds = {
 		dig = {name="slimenodes_dig", gain=0.3},
 		dug = {name="slimenodes_dug", gain=0.6},
@@ -166,7 +166,7 @@ minetest.register_node("slimenodes:slime_solid_violet", {
 	description = "violet solid slime",
 	tiles = { "slimenodes_solidslime_violet.png" },
 	walkable = true,
-	groups = {slimey=3, fall_damage_add_percent=-30, disable_jump=1, level=3},
+	groups = {cracky=1},
 	sounds = {
 		dig = {name="slimenodes_dig", gain=0.3},
 		dug = {name="slimenodes_dug", gain=0.6},
@@ -176,50 +176,4 @@ minetest.register_node("slimenodes:slime_solid_violet", {
 })
 
 
-minetest.register_tool("slimenodes:collector_lvl1", {
-	description = "slime collector level 1",
-	inventory_image = "slimenodes_collector_lvl1.png",
-	liquids_pointable = true,
-	tool_capabilities = {
-		full_punch_interval = 1,
-		groupcaps = {
-			slimey = { times = { [3] = 2 }, uses = 0, maxlevel = 1 }
-		}
-	}
-})
 
-minetest.register_tool("slimenodes:collector_lvl2", {
-	description = "slime collector level 2",
-	inventory_image = "slimenodes_collector_lvl2.png",
-	liquids_pointable = true,
-	tool_capabilities = {
-		full_punch_interval = 1,
-		groupcaps = {
-			slimey = { times = { [2] = 3, [3] = 1.5 }, uses = 0, maxlevel = 2 }
-		}
-	}
-})
-
-minetest.register_tool("slimenodes:collector_lvl3", {
-	description = "slime collector level 3",
-	inventory_image = "slimenodes_collector_lvl3.png",
-	liquids_pointable = true,
-	tool_capabilities = {
-		full_punch_interval = 1,
-		groupcaps = {
-			slimey = { times = { [1] = 4, [2] = 1.5, [3] = 0.75 }, uses = 0, maxlevel = 3 }
-		}
-	}
-})
-
-minetest.register_tool("slimenodes:collector_lvl4", {
-	description = "slime collector level 4",
-	inventory_image = "slimenodes_collector_lvl4.png",
-	liquids_pointable = true,
-	tool_capabilities = {
-		full_punch_interval = 0.9,
-		groupcaps = {
-			slimey = { times = { [1] = 1, [2] = 0.5, [3] = 0.1 }, uses = 0, maxlevel = 4 }
-		}
-	}
-})

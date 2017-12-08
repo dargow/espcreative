@@ -71,7 +71,7 @@ Current mods:
 63. rainbow_ore
 64. roofblocks
 65. signs_lib - Updated
-66. slimenodes
+66. slimenodes - Fixed
 67. snow - Fixed
 --68. snowdrift - Removed. Non-creative mod
 69. spectator_mode - Updated
