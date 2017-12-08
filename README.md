@@ -72,7 +72,7 @@ Current mods:
 64. roofblocks
 65. signs_lib - Updated
 66. slimenodes
-67. snow
+67. snow - Fixed
 --68. snowdrift - Removed. Non-creative mod
 69. spectator_mode - Updated
 70. steel - Fixed

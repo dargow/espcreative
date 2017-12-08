@@ -39,44 +39,39 @@ http://github.com/Splizard/minetest-mod-snow/
 
 
 -- Original Lua Files
---dofile(minetest.get_modpath("snow").."/util.lua")
---dofile(minetest.get_modpath("snow").."/mapgen.lua")
---dofile(minetest.get_modpath("snow").."/sled.lua")
+--dofile(modpath.."/util.lua")
+--dofile(modpath.."/mapgen.lua")
+--dofile(modpath.."/sled.lua")
 -- "falling_snow.lua" disabled since weather functions minetest.get_heat(pos) and minetest.get_humidity(pos)
 -- have been removed from Minetest.
 --  Until something else can be figured out, use paramat's "Snowdrift" mod instead.
--- dofile(minetest.get_modpath("snow").."/falling_snow.lua")
+-- dofile(modpath.."/falling_snow.lua")
+
+local load_time_start = minetest.get_us_time()
+
 
 -- Original init.lua File Broken into Smaller Files
-dofile(minetest.get_modpath("snow").."/src/abms.lua")
-dofile(minetest.get_modpath("snow").."/src/aliases.lua")
-dofile(minetest.get_modpath("snow").."/src/crafting.lua")
-dofile(minetest.get_modpath("snow").."/src/snowball.lua")
+local srcpath = minetest.get_modpath"snow".."/src/"
+dofile(srcpath.."abms.lua")
+dofile(srcpath.."aliases.lua")
+dofile(srcpath.."crafting.lua")
 
 
 -- The formspec menu didn't work when util.lua was the very first "dofile" so I moved
 -- it and all the other original "dofiles", in order, to the bottom of the list. ~ LazyJ
 -- Minetest would crash if the mapgen was called upon before the rest of other snow lua files so
 -- I put it lower on the list and that seems to do the trick. ~ LazyJ
-dofile(minetest.get_modpath("snow").."/src/util.lua")
+dofile(srcpath.."util.lua")
+dofile(srcpath.."snowball.lua")
 -- To get Xmas tree saplings, the "christmas_content", true or false, in "util.lua" has to be determined first.
 -- That means "nodes.lua", where the saplings are controlled, has to come after "util.lua". ~ LazyJ
-dofile(minetest.get_modpath("snow").."/src/nodes.lua")
-dofile(minetest.get_modpath("snow").."/src/basic_stairs_slabs.lua")
-dofile(minetest.get_modpath("snow").."/src/mapgen.lua")
-dofile(minetest.get_modpath("snow").."/src/sled.lua")
-dofile(minetest.get_modpath("snow").."/src/falling_snow.lua")
+dofile(srcpath.."nodes.lua")
+dofile(srcpath.."mapgen.lua")
+dofile(srcpath.."sled.lua")
+dofile(srcpath.."falling_snow.lua")
 
 
-
--- Check for "MoreBlocks". If not found, skip this next "dofile".
-
-if minetest.get_modpath("moreblocks") then
-
-	dofile(minetest.get_modpath("snow").."/src/stairsplus.lua")
-
-end
-
+local is_uneven
 --This function places snow checking at the same time for snow level and increasing as needed.
 --This also takes into account sourrounding snow and makes snow even.
 function snow.place(pos)
@@ -88,12 +83,11 @@ function snow.place(pos)
 		return
 	end
 
-	local bnode = minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z})
 	if node.name == "default:snow" then
 		local level = minetest.get_node_level(pos)
 		if level < 63 then
-			if minetest.get_item_group(bnode.name, "leafdecay") == 0
-			and not snow.is_uneven(pos) then
+			if minetest.get_item_group(minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z}).name, "leafdecay") == 0
+			and not is_uneven(pos) then
 				minetest.sound_play("default_snow_footstep", {pos=pos})
 				minetest.add_node_level(pos, 7)
 			end
@@ -109,7 +103,7 @@ function snow.place(pos)
 			end
 		end
 	elseif node.name ~= "default:ice"
-	and bnode.name ~= "air" then
+	and minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z}).name ~= "air" then
 		local data = minetest.registered_nodes[node.name]
 		local drawtype = data.drawtype
 		if drawtype == "normal"
@@ -135,13 +129,11 @@ end
 
 -- Checks if the snow level is even at any given pos.
 -- Smooth Snow
-local function is_uneven(pos)
+local function uneven(pos)
 	local num = minetest.get_node_level(pos)
 	local get_node = minetest.get_node
 	local add_node = minetest.add_node
-	local found
 	local foundx
-	local foundy
 	local foundz
 	for z = -1,1 do
 		for x = -1,1 do
@@ -162,7 +154,6 @@ local function is_uneven(pos)
 			if not (x == 0 and z == 0)
 			and node.name == "default:snow"
 			and minetest.get_node_level(p) < num then
-				found = true
 				foundx = x
 				foundz = z
 			elseif node.name == "air"
@@ -174,17 +165,36 @@ local function is_uneven(pos)
 			end
 		end
 	end
-	if found then
+	if foundx then
 		local p = {x=pos.x+foundx, y=pos.y, z=pos.z+foundz}
-		if is_uneven(p) ~= true then
+		if not is_uneven(p) then
 			minetest.add_node_level(p, 7)
 		end
 		return true
 	end
 end
 
-function snow.is_uneven(pos)
-	if snow.smooth_snow then
-		return is_uneven(pos)
+if snow.smooth_snow then
+	is_uneven = uneven
+else
+	is_uneven = function() end
+end
+
+snow.register_on_configuring(function(name, v)
+	if name == "smooth_snow" then
+		if v then
+			is_uneven = uneven
+		else
+			is_uneven = function() end
+		end
 	end
+end)
+
+
+local time = (minetest.get_us_time() - load_time_start) / 1000000
+local msg = "[snow] loaded after ca. " .. time .. " seconds."
+if time > 0.01 then
+	print(msg)
+else
+	minetest.log("info", msg)
 end

@@ -36,7 +36,7 @@ There is one in each of the "stairsplus.register_all" sections.
 
 -- Check for infinite stacks
 
---if minetest.get_modpath("unified_inventory") or not minetest.setting_getbool("creative_mode") then
+--if minetest.get_modpath("unified_inventory") or not minetest.settigetbool("creative_mode") then
 --	snow_stairsplus.expect_infinite_stacks = false
 --else
 --	snow_stairsplus.expect_infinite_stacks = true
@@ -50,12 +50,9 @@ There is one in each of the "stairsplus.register_all" sections.
 -- First, let's run a check to see if MoreBlocks is installed; we're going to need it for the
 -- next section of stairsplus stuff. ~LazyJ
 
-if (minetest.get_modpath("moreblocks"))
-and rawget(_G, "stairsplus")
 
 -- 'If' MoreBlocks was found and stairsplus is available, well, 'then' go ahead with this next part:
 
-then
 
 --[[  Leave commented out - For reference only. ~ LazyJ
 function stairsplus.register_all(modname, subname, recipeitem, fields)
@@ -274,7 +271,6 @@ for _, name in pairs(snow_nodes) do
 
 	stairsplus:register_all("moreblocks", name, nodename, {
 		description = ndef.description,
-		drop = drop,
 		groups = {cracky=2, crumbly=2, choppy=2, oddly_breakable_by_hand=2, melts=2, icemaker=1},
 		tiles = ndef.tiles,
 		--paramtype2 = "facedir",
@@ -336,7 +332,7 @@ for _, name in pairs(snow_nodes) do
 	})
 end
 
-else  -- from clear up at the top, the MoreBlocks check. "Else", if MoreBlocks wasn't found, skip
+  -- from clear up at the top, the MoreBlocks check. "Else", if MoreBlocks wasn't found, skip
 		-- down to here, "return" nothing and "end" this script. ~ LazyJ
-return
-end
+
+

@@ -8,7 +8,7 @@ local nodedef = {
 	tiles = {"snow_needles.png"},
 	waving = 1,
 	paramtype = "light",
-	groups = {snappy=3, leafdecay=5},
+	groups = {snappy=3},
 	furnace_burntime = 1,
 	drop = {
 		max_items = 1,
@@ -36,24 +36,40 @@ The Xmas tree needles are registred and defined a farther down in this nodes.lua
 if snow.christmas_content then
 	table.insert(nodedef.drop.items, 1, {
 		-- player will get xmas tree with 1/120 chance
-		items = {'snow:xmas_tree'},
+		items = {"snow:xmas_tree"},
 		rarity = 120,
 	})
 end
 
 minetest.register_node("snow:needles", table.copy(nodedef))
 
+default.register_leafdecay{
+	trunks = {"default:pine_tree"},
+	leaves = {"snow:needles"},
+	radius = 2,
+}
 
-
-
-
-	--Christmas easter egg
-	minetest.register_on_mapgen_init( function()
-		if rawget(_G, "skins") then
-			skins.add("character_snow_man")
+snow.register_on_configuring(function(name, v)
+	if name == "christmas_content" then
+		local drop = minetest.registered_nodes["snow:needles"].drop
+		if v then
+			table.insert(drop.items, 1, {
+				items = {"snow:xmas_tree"},
+				rarity = 120,
+			})
+		else
+			table.remove(drop.items, 1)
 		end
+		minetest.override_item("snow:needles", {drop = drop})
 	end
-	)
+end)
+
+
+
+	-- Christmas egg
+	if minetest.global_exists"skins" then
+		skins.add"character_snow_man"
+	end
 
 
 -- Decorated Pine Leaves
@@ -186,6 +202,7 @@ minetest.register_node("snow:shrub", table.copy(nodedef))
 nodedef.tiles = {"snow_shrub.png^snow_shrub_covering.png"}
 nodedef.inventory_image = "snow_shrub.png^snow_shrub_covering.png"
 nodedef.wield_image = "snow_shrub.png^snow_shrub_covering.png"
+nodedef.paramtype2 = "degrotate"
 nodedef.drop = "snow:shrub"
 nodedef.furnace_burntime = 3
 minetest.register_node("snow:shrub_covered", nodedef)
@@ -203,6 +220,7 @@ if rawget(_G, "flowers") then
 			tiles = { "snow_" .. name .. ".png" },
 			sunlight_propagates = true,
 			paramtype = "light",
+			paramtype2 = "degrotate",
 			walkable = false,
 			drop = "",
 			groups = {snappy=3, attached_node = 1},
@@ -237,6 +255,7 @@ nodedef = {
 	drawtype = "plantlike",
 	tiles = {"snow_apple.png"},
 	paramtype = "light",
+	paramtype2 = "degrotate",
 	walkable = false,
 	sunlight_propagates = apple.sunlight_propagates,
 	selection_box = apple.selection_box,
@@ -288,8 +307,9 @@ nodedef = {
 		dug = {name="default_snow_footstep", gain=0.75},
 		place = {name="default_place_node", gain=1.0}
 	}),
- 	-- The "on_construct" part below, thinking in terms of layers, dirt_with_snow could also
- 	-- double as dirt_with_frost which adds subtlety to the winterscape. ~ LazyJ
+	-- The "on_construct" part below, thinking in terms of layers,
+	-- dirt_with_snow could also double as dirt_with_frost which adds subtlety
+	-- to the winterscape. ~ LazyJ
 	on_construct = snow_onto_dirt
 }
 
@@ -322,16 +342,12 @@ minetest.register_node("snow:snow_cobble", nodedef)
 
 -- Override Default Nodes to Add Extra Functions
 
--- This adds code to the existing default ice. ~ LazyJ
 minetest.override_item("default:ice", {
-	-- The Lines: 1. Alpah to make semi-transparent ice, 2 to work with
-	-- the dirt_with_grass/snow/just dirt ABMs. ~ LazyJ, 2014_03_09
-	use_texture_alpha = true, -- 1
-	param2 = 0,
-	--param2 is reserved for how much ice will freezeover.
-	sunlight_propagates = true, -- 2
+	use_texture_alpha = true,
+	param2 = 0, --param2 is reserved for how much ice will freezeover.
+	sunlight_propagates = true, -- necessary for dirt_with_grass/snow/just dirt ABMs
 	drawtype = "glasslike",
-	inventory_image  = minetest.inventorycube("default_ice.png").."^[brighten",
+	inventory_image  = minetest.inventorycube"default_ice.png".."^[brighten",
 	liquidtype = "none",
 	 -- I made this a lot harder to dig than snow blocks because ice is much more dense
 	 -- and solid than fluffy snow. ~ LazyJ
@@ -345,12 +361,11 @@ minetest.override_item("default:ice", {
 })
 
 
-
--- This adds code to the existing, default snowblock. ~ LazyJ
 minetest.override_item("default:snowblock", {
-	liquidtype = "none", -- LazyJ to make dirt below change to dirt_with_snow (see default, nodes.lua, dirt ABM)
-	paramtype = "light",  -- LazyJ to make dirt below change to dirt_with_snow (see default, nodes.lua, dirt ABM)
-	sunlight_propagates = true, -- LazyJ to make dirt below change to dirt_with_snow (see default, nodes.lua, dirt ABM)
+	-- LazyJ to make dirt below change to dirt_with_snow (see default, nodes.lua, dirt ABM)
+	liquidtype = "none",
+	paramtype = "light",
+	sunlight_propagates = true,
 	 -- Snow blocks should be easy to dig because they are just fluffy snow. ~ LazyJ
 	groups = {cracky=3, crumbly=3, choppy=3, oddly_breakable_by_hand=3, melts=1, icemaker=1, cooks_into_ice=1, falling_node=1},
 	--drop = "snow:snow_cobble",
@@ -358,3 +373,106 @@ minetest.override_item("default:snowblock", {
 		-- Thinking in terms of layers, dirt_with_snow could also double as
 		-- dirt_with_frost which adds subtlety to the winterscape. ~ LazyJ, 2014_04_04
 })
+
+
+minetest.override_item("default:snow", {
+	drop = {
+		max_items = 2,
+		items = {
+			{items = {'snow:moss'}, rarity = 20,},
+			{items = {'default:snow'},}
+		}
+	},
+	leveled = 7,
+	node_box = {
+		type = "leveled",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -0.5, 0.5},
+		},
+	},
+	groups = {cracky=3, crumbly=3, choppy=3, oddly_breakable_by_hand=3, falling_node=1, melts=2, float=1},
+	sunlight_propagates = true,
+	walkable = true,
+	node_placement_prediction = "",
+	on_construct = function(pos)
+		pos.y = pos.y-1
+		local node = minetest.get_node(pos)
+		if node.name == "default:dirt_with_grass"
+		or node.name == "default:dirt" then
+			node.name = "default:dirt_with_snow"
+			minetest.set_node(pos, node)
+		end
+	end,
+	--Handle node drops due to node level.
+	on_dig = function(pos, node, digger)
+		local level = minetest.get_node_level(pos)
+		minetest.node_dig(pos, node, digger)
+		if minetest.get_node(pos).name ~= node.name then
+			local inv = digger:get_inventory()
+			if not inv then
+				return
+			end
+			local left = inv:add_item("main", "default:snow "..tostring(level/7-1))
+			if not left:is_empty() then
+				minetest.add_item({
+					x = pos.x + math.random()/2-0.25,
+					y = pos.y + math.random()/2-0.25,
+					z = pos.z + math.random()/2-0.25,
+				}, left)
+			end
+		end
+	end,
+	--Manage snow levels.
+	on_place = function(itemstack, placer, pointed_thing)
+		local under = pointed_thing.under
+		local oldnode_under = minetest.get_node_or_nil(under)
+		local above = pointed_thing.above
+
+		if not oldnode_under
+		or not above then
+			return
+		end
+
+		local olddef_under = ItemStack({name=oldnode_under.name}):get_definition()
+		olddef_under = olddef_under or minetest.nodedef_default
+
+		local place_to
+		-- If node under is buildable_to, place into it instead (eg. snow)
+		if olddef_under.buildable_to then
+			place_to = under
+		else
+			-- Place above pointed node
+			place_to = above
+		end
+
+		local level = minetest.get_node_level(place_to)
+		if level == 63 then
+			minetest.set_node(place_to, {name="default:snowblock"})
+		else
+			minetest.set_node_level(place_to, level+7)
+		end
+
+		if minetest.get_node(place_to).name ~= "default:snow" then
+			local itemstack, placed = minetest.item_place_node(itemstack, placer, pointed_thing)
+			return itemstack, placed
+		end
+
+		itemstack:take_item()
+
+		return itemstack
+	end,
+	on_use = snow.shoot_snowball
+})
+
+
+
+-- Do stairs files
+
+local path = minetest.get_modpath"snow".."/src/"
+
+dofile(path.."basic_stairs_slabs.lua")
+
+if minetest.global_exists"stairsplus"
+and minetest.get_modpath"moreblocks" then
+	dofile(path.."stairsplus.lua")
+end

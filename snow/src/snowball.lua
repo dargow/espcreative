@@ -6,18 +6,35 @@
 -- Quite a bit of trial-and-error learning here and it boiled down to a
 -- small handful of code lines making the difference. ~ LazyJ
 
-local creative_mode = minetest.setting_getbool("creative_mode")
+local creative_mode = minetest.settings:get_bool"creative_mode"
+
+
+local snowball_velocity, entity_attack_delay
+local function update_snowball_vel(v)
+	snowball_velocity = v
+	local walkspeed = tonumber(minetest.settings:get"movement_speed_walk") or 4
+	entity_attack_delay = (walkspeed+1)/v
+end
+update_snowball_vel(snow.snowball_velocity)
+
+local snowball_gravity = snow.snowball_gravity
+snow.register_on_configuring(function(name, v)
+	if name == "snowball_velocity" then
+		update_snowball_vel(v)
+	elseif name == "snowball_gravity" then
+		snowball_gravity = v
+	end
+end)
 
 local function get_gravity()
-	local grav = tonumber(minetest.setting_get("movement_gravity")) or 9.81
-	return grav*snow.snowball_gravity
+	local grav = tonumber(minetest.settings:get"movement_gravity") or 9.81
+	return grav*snowball_gravity
 end
 
-local someone_throwing
-local timer = 0
+local someone_throwing, just_acitvated
 
 --Shoot snowball
-local function snow_shoot_snowball(item, player)
+function snow.shoot_snowball(item, player)
 	local addp = {y = 1.625} -- + (math.random()-0.5)/5}
 	local dir = player:get_look_dir()
 	local dif = 2*math.sqrt(dir.z*dir.z+dir.x*dir.x)
@@ -25,12 +42,13 @@ local function snow_shoot_snowball(item, player)
 	addp.z = -dir.x/dif -- + (math.random()-0.5)/5
 	local pos = vector.add(player:getpos(), addp)
 	local obj = minetest.add_entity(pos, "snow:snowball_entity")
-	obj:setvelocity(vector.multiply(dir, snow.snowball_velocity))
+	obj:setvelocity(vector.multiply(dir, snowball_velocity))
 	obj:setacceleration({x=dir.x*-3, y=-get_gravity(), z=dir.z*-3})
+	obj:get_luaentity().thrower = player:get_player_name()
 	if creative_mode then
 		if not someone_throwing then
 			someone_throwing = true
-			timer = -0.5
+			just_acitvated = true
 		end
 		return
 	end
@@ -39,20 +57,14 @@ local function snow_shoot_snowball(item, player)
 end
 
 if creative_mode then
-	local function update_step(dtime)
-		timer = timer+dtime
-		if timer < 0.006 then
-			return
-		end
-		timer = 0
-
+	local function update_step()
 		local active
 		for _,player in pairs(minetest.get_connected_players()) do
 			if player:get_player_control().LMB then
 				local item = player:get_wielded_item()
 				local itemname = item:get_name()
 				if itemname == "default:snow" then
-					snow_shoot_snowball(nil, player)
+					snow.shoot_snowball(nil, player)
 					active = true
 					break
 				end
@@ -65,13 +77,21 @@ if creative_mode then
 		end
 	end
 
-	-- do automatic throwing using a globalstep
-	minetest.register_globalstep(function(dtime)
+	-- do automatic throwing using minetest.after
+	local function do_step()
+		local timer
 		-- only if one holds left click
-		if someone_throwing then
-			update_step(dtime)
+		if someone_throwing
+		and not just_acitvated then
+			update_step()
+			timer = 0.006
+		else
+			timer = 0.5
+			just_acitvated = false
 		end
-	end)
+		minetest.after(timer, do_step)
+	end
+	minetest.after(3, do_step)
 end
 
 --The snowball Entity
@@ -113,6 +133,7 @@ function snow_snowball_ENTITY.on_step(self, dtime)
 	if self.timer > 600 then
 		-- 10 minutes are too long for a snowball to fly somewhere
 		self.object:remove()
+		return
 	end
 
 	if self.physical then
@@ -141,13 +162,42 @@ function snow_snowball_ENTITY.on_step(self, dtime)
 		--self.object:setvelocity({x=0, y=0, z=0})
 		pos = self.lastpos
 		self.object:setpos(pos)
-		local gain = vector.length(self.object:getvelocity())/30
-		minetest.sound_play("default_snow_footstep", {pos=pos, gain=gain})
+		minetest.sound_play("default_snow_footstep", {pos=pos, gain=vector.length(self.object:getvelocity())/30})
 		self.object:set_properties({physical = true})
 		self.physical = true
 		return
 	end
 	self.lastpos = vector.new(pos)
+
+	if self.timer < entity_attack_delay then
+		return
+	end
+	for _,v in pairs(minetest.get_objects_inside_radius(pos, 1.73)) do
+		if v ~= self.object then
+			local entity_name = v:get_luaentity().name
+			if v:is_player()
+			or (entity_name ~= "snow:snowball_entity"
+			and entity_name ~= "__builtin:item"
+			and entity_name ~= "gauges:hp_bar") then
+				local vvel = v:getvelocity() or v:get_player_velocity()
+				local veldif = self.object:getvelocity()
+				if vvel then
+					veldif = vector.subtract(veldif, vvel)
+				end
+				local gain = vector.length(veldif)/20
+				v:punch(
+					(self.thrower and minetest.get_player_by_name(self.thrower))
+						or self.object,
+					1,
+					{full_punch_interval=1, damage_groups = {fleshy=math.ceil(gain)}}
+				)
+				minetest.sound_play("default_snow_footstep", {pos=pos, gain=gain})
+				spawn_falling_node(pos, {name = "default:snow"})
+				self.object:remove()
+				return
+			end
+		end
+	end
 end
 
 
@@ -199,97 +249,6 @@ minetest.register_node(":default:snow", {
 	on_use = snow_shoot_snowball  -- This line is from the 'Snow' mod, the reset is default Minetest.
 })
 --]]
-
-
-
-minetest.override_item("default:snow", {
-	drop = {
-		max_items = 2,
-		items = {
-			{items = {'snow:moss'}, rarity = 20,},
-			{items = {'default:snow'},}
-		}
-	},
-	leveled = 7,
-	node_box = {
-		type = "leveled",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, -0.5, 0.5},
-		},
-	},
-	groups = {cracky=3, crumbly=3, choppy=3, oddly_breakable_by_hand=3, falling_node=1, melts=2, float=1},
-	sunlight_propagates = true,
-	--Disable placement prediction for snow.
- 	node_placement_prediction = "",
-	on_construct = function(pos)
-		pos.y = pos.y-1
-		local node = minetest.get_node(pos)
-		if node.name == "default:dirt_with_grass"
-		or node.name == "default:dirt" then
-			node.name = "default:dirt_with_snow"
-			minetest.set_node(pos, node)
-		end
-	end,
-	--Handle node drops due to node level.
-	on_dig = function(pos, node, digger)
-		local level = minetest.get_node_level(pos)
-		minetest.node_dig(pos, node, digger)
-		if minetest.get_node(pos).name ~= node.name then
-			local inv = digger:get_inventory()
-			if not inv then
-				return
-			end
-			local left = inv:add_item("main", "default:snow "..tostring(level/7-1))
-			if not left:is_empty() then
-				minetest.add_item({
-					x = pos.x + math.random()/2-0.25,
-					y = pos.y + math.random()/2-0.25,
-					z = pos.z + math.random()/2-0.25,
-				}, left)
-			end
-		end
-	end,
-	--Manage snow levels.
-	on_place = function(itemstack, placer, pointed_thing)
-		local under = pointed_thing.under
-		local oldnode_under = minetest.get_node_or_nil(under)
-		local above = pointed_thing.above
-
-		if not oldnode_under
-		or not above then
-			return
-		end
-
-		local olddef_under = ItemStack({name=oldnode_under.name}):get_definition()
-		olddef_under = olddef_under or minetest.nodedef_default
-
-		local place_to
-		-- If node under is buildable_to, place into it instead (eg. snow)
-		if olddef_under.buildable_to then
-			place_to = under
-		else
-			-- Place above pointed node
-			place_to = above
-		end
-
-		local level = minetest.get_node_level(place_to)
-		if level == 63 then
-			minetest.set_node(place_to, {name="default:snowblock"})
-		else
-			minetest.set_node_level(place_to, level+7)
-		end
-
-		if minetest.get_node(place_to).name ~= "default:snow" then
-			local itemstack, placed = minetest.item_place_node(itemstack, placer, pointed_thing)
-			return itemstack, placed
-		end
-
-		itemstack:take_item()
-
-		return itemstack
-	end,
-	on_use = snow_shoot_snowball
-})
 
 
 
