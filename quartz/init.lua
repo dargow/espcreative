@@ -2,27 +2,6 @@ dofile(minetest.get_modpath("quartz").."/settings.txt")
 
 --Node Registration
 
---Quartz Crystal
-
-minetest.register_node("quartz:quartz_ore", {
-         description = "Quartz Ore",
- 	 tiles = {"default_stone.png^quartz_ore.png"},
-	 groups = {cracky=3, stone=1},
-	 drop = 'quartz:quartz_crystal',
-         sounds = default.node_sound_stone_defaults(),
-})
-	 
-minetest.register_ore({
-    ore_type       = "scatter",
-    ore            = "quartz:quartz_ore",
-    wherein        = "default:stone",
-    clust_scarcity = 10*10*10,
-    clust_num_ores = 6,
-    clust_size     = 5,
-    y_min     = -31000,
-    y_max     = -5,
-})
-
 --Quartz Block
 minetest.register_node("quartz:block", {
 	description = "Quartz Block",

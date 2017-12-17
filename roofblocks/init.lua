@@ -33,34 +33,9 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
-	output = 'roofblocks:roofslates 2',
-	recipe = {
-		{'default:stone', 'default:stone', ''},
-		{'group:stick', 'group:stick', ''},
-		{'', '', ''},
-	}
-})
 
-minetest.register_craft({
-	output = 'roofblocks:roofsteel 2',
-	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot', ''},
-		{'group:stick', 'group:stick', ''},
-		{'', '', ''},
-	}
-})
 
-minetest.register_craft({
-	output = 'roofblocks:roofwood 2',
-	recipe = {
-		{'group:wood', 'group:wood', ''},
-		{'group:stick', 'group:stick', ''},
-		{'', '', ''},
-	}
-})
-
-if stairsplus then
+if minetest.get_modpath("stairsplus") and enable_stairsplus then
 	print ('[roofblocks] Stairplus registrations')
 	function roofblocks.register_stairsplus(node) 
 		local ndef = minetest.registered_nodes['roofblocks:'..node]

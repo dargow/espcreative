@@ -66,7 +66,7 @@ Current mods:
 58. pipeworks
 59. pizza
 60. plasticbox
-61. pyramids
+61. pyramids - Works
 62. quartz - Fixed
 63. rainbow_ore - Removed. Added alias
 64. roofblocks - Works.
