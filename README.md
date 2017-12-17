@@ -65,7 +65,7 @@ Current mods:
 57. octutool
 58. pipeworks
 59. pizza
-60. plasticbox
+60. plasticbox - Fixed
 61. pyramids - Works
 62. quartz - Fixed
 63. rainbow_ore - Removed. Added alias
