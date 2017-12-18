@@ -1,7 +1,7 @@
 local ACDC = 0.2 -- Acceleration / decelleration
-local MAXSP = 12 -- Maximum speed
+local MAXSP = 15 -- Maximum speed
 local TURNSP = 0.03 -- Maximum yaw speed
-local STEPH = 0.6 -- Stepheight, 0.6 = climb slabs, 1.1 = climb nodes
+local STEPH = 1.1 -- Stepheight, 0.6 = climb slabs, 1.1 = climb nodes
 
 
 -- Functions
@@ -634,77 +634,4 @@ minetest.register_craftitem("mesecar:mesecar4", { -- Mesecar
 })
 
 
-minetest.register_craftitem("mesecar:motor", {
-	description = "Mesecar Motor",
-	inventory_image = "mesecar_motor.png",
-	groups = {not_in_creative_inventory=1},
-})
 
-
-minetest.register_craftitem("mesecar:battery", {
-	description = "Mesecar Battery",
-	inventory_image = "mesecar_battery.png",
-	groups = {not_in_creative_inventory=1},
-})
-
-
--- Crafting
-
-minetest.register_craft({
-	output = "mesecar:motor",
-	recipe = {
-		{"default:steel_ingot", "default:copper_ingot", "default:steel_ingot"},
-		{"default:copper_ingot", "default:steel_ingot", "default:copper_ingot"},
-		{"default:steel_ingot", "default:copper_ingot", "default:steel_ingot"},
-	},
-})
-
-
-minetest.register_craft({
-	output = "mesecar:battery",
-	recipe = {
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "default:mese_block", "default:steel_ingot"},
-		{"default:copper_ingot", "default:copper_ingot", "default:steel_ingot"},
-	},
-})
-
-
-minetest.register_craft({
-	output = "mesecar:mesecar1", -- Skycar
-	recipe = {
-		{"default:steel_ingot", "dye:blue", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wool", "default:glass"},
-		{"mesecar:motor", "mesecar:battery", "mesecar:motor"},
-	},
-})
-
-
-minetest.register_craft({
-	output = "mesecar:mesecar2", -- Oerkka
-	recipe = {
-		{"default:steel_ingot", "dye:magenta", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wool", "default:glass"},
-		{"mesecar:motor", "mesecar:battery", "mesecar:motor"},
-	},
-})
-
-
-minetest.register_craft({
-	output = "mesecar:mesecar3", -- Nyancart
-	recipe = {
-		{"default:steel_ingot", "dye:pink", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wool", "default:glass"},
-		{"mesecar:motor", "mesecar:battery", "mesecar:motor"},
-	},
-})
-
-
-minetest.register_craft({
-	output = "mesecar:mesecar4", -- Mesecar
-	recipe = {
-		{"default:steel_ingot", "dye:yellow", "default:steel_ingot"},
-		{"default:steel_ingot", "group:wool", "default:glass"},
-		{"mesecar:motor", "mesecar:battery", "mesecar:motor"},
-	},
-})

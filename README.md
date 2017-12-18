@@ -36,7 +36,7 @@ Current mods:
 28. ✔?inventory_plus - Fixed.
 29. ✔jumping - Fixed
 30. ✔lapis
-31. ?mesecar
+31. ✔mesecar
 32. ?mesecons_modpack
 33. ?moreblocks
 34. ?morestones
