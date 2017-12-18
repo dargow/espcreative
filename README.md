@@ -35,7 +35,7 @@ Current mods:
 27. ~~interact - Removed. Must be replace to other same mod~~
 28. ✔?inventory_plus - Fixed.
 29. ✔jumping - Fixed
-30. ?lapis
+30. ✔lapis
 31. ?mesecar
 32. ?mesecons_modpack
 33. ?moreblocks
@@ -61,7 +61,7 @@ Current mods:
 53. ?mysponge
 54. ?mywoodslopes
 55. ~~names_per_ip - Removed. Not need more~~
-56. ?nether
+56. ✔nether - Fixed
 57. ✔octutool - Fixed
 58. ?pipeworks
 59. ?pizza
