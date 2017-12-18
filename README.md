@@ -18,13 +18,13 @@ Current mods:
 10. ✔colormashine - Updated and Fixed
 11. ✔cottages - Updated and Fixed
 12. ✔?crops - Fixed partically
-13. ?cutepie
-14. ?doors_modular
+13. ✔cutepie - Fixed
+14. ✔doors_modular - Works, not need fix
 15. ?digilines
-16. ?factory_bridges - Removed recipes.
+16. ✔factory_bridges - Removed recipes.
 17. ?farming_plus
 18. ?food
-19. ✔?gis - Fixed
+19. x?gis - ~~Fixed~~ Need restore old version
 20. ?gloopblocks
 21. ?glowblocks
 22. ?greenscreen
@@ -42,7 +42,7 @@ Current mods:
 34. ?morestones
 35. ?mybricks
 36. ?mychisel
-37. ?mycorners
+37. ✔?mycorners - Works, but slow load. New version don't work.
 38. ?mydesk
 39. ?mydfences
 40. ?mydoors
@@ -50,7 +50,7 @@ Current mods:
 42. ?myholeinthewall
 43. ?myladders
 44. ?mylandscaping
-45. ✔?mylights - updateed, but old nodes on map can be "unknown"
+45. ✔mylights - Fixed
 46. ?mymasonhammer
 47. ?mymeshnodes
 48. ?mymillwork
@@ -92,6 +92,7 @@ Current mods:
 ✔ - Works good
 ✔? - Works, potentially can be corrected
 ? - Not tested
+x? - Critically importatant fix
 
 Additional Mods
 ---
