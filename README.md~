@@ -33,7 +33,7 @@ Current mods:
 25. ?ilights
 26. ?infrastructure
 27. ~~interact - Removed. Must be replace to other same mod~~ 
-28. ?inventory_plus
+28. ✔?inventory_plus - Fixed.
 29. ?jumping
 30. ?lapis
 31. ?mesecar
@@ -62,7 +62,7 @@ Current mods:
 54. ?mywoodslopes
 55. ~~names_per_ip - Removed. Not need more~~
 56. ?nether
-57. ?octutool
+57. ✔octutool
 58. ?pipeworks
 59. ?pizza
 60. ✔?plasticbox - Fixed
