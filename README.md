@@ -32,12 +32,12 @@ Current mods:
 24. ?homedecor_modpack
 25. ?ilights
 26. ?infrastructure
-27. ~~interact - Removed. Must be replace to other same mod~~ 
+27. ~~interact - Removed. Must be replace to other same mod~~
 28. ✔?inventory_plus - Fixed.
-29. ?jumping
+29. ✔jumping - Fixed
 30. ?lapis
 31. ?mesecar
-32. ?mesecons_modpack 
+32. ?mesecons_modpack
 33. ?moreblocks
 34. ?morestones
 35. ?mybricks

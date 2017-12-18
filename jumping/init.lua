@@ -25,21 +25,38 @@ local trampoline_punch = function(pos, node)
 end
 
 for i = 1, 6 do
-	minetest.register_node("jumping:trampoline"..i, {
+	minetest.register_alias("jumping:trampoline"..i, "jumping:trampoline")
+--	minetest.register_node("jumping:trampoline"..i, {
+--		description = "Trampoline",
+--		drawtype = "nodebox",
+--		node_box = trampolinebox,
+--		selection_box = trampolinebox,
+--		paramtype = "light",
+--		on_punch = trampoline_punch,
+--		tiles = {
+--			"jumping_trampoline_top.png",
+--			"jumping_trampoline_bottom.png",
+--			"jumping_trampoline_sides.png^jumping_trampoline_sides_overlay"..i..".png"
+--		},
+--		groups = {dig_immediate=2, bouncy=20+i*20, fall_damage_add_percent=-70},
+--	})
+end
+
+minetest.register_node("jumping:trampoline", {
 		description = "Trampoline",
 		drawtype = "nodebox",
 		node_box = trampolinebox,
 		selection_box = trampolinebox,
 		paramtype = "light",
-		on_punch = trampoline_punch,
+--		on_punch = trampoline_punch,
 		tiles = {
 			"jumping_trampoline_top.png",
 			"jumping_trampoline_bottom.png",
-			"jumping_trampoline_sides.png^jumping_trampoline_sides_overlay"..i..".png"
+			"jumping_trampoline_sides.png^jumping_trampoline_sides_overlay4.png"
 		},
-		groups = {dig_immediate=2, bouncy=20+i*20, fall_damage_add_percent=-70},
+		groups = {dig_immediate=2, bouncy=20+1*20, fall_damage_add_percent=-70},
 	})
-end
+
 
 minetest.register_node("jumping:cushion", {
 	description = "Cushion",
@@ -55,20 +72,4 @@ minetest.register_node("jumping:cushion", {
 	groups = {dig_immediate=2, disable_jump=1, fall_damage_add_percent=-100},
 })
 
-minetest.register_craft({
-	output = "jumping:trampoline1",
-	recipe = {
-		{"default:wood", "default:wood", "default:wood"},
-		{"default:leaves", "default:leaves", "default:leaves"},
-		{"default:stick", "default:stick", "default:stick"}
-	}
-})
 
-minetest.register_craft({
-	output = "jumping:cushion",
-	recipe = {
-		{"default:leaves", "default:leaves", "default:leaves"},
-		{"default:leaves", "default:leaves", "default:leaves"},
-		{"default:stick", "default:stick", "default:stick"}
-	}
-})
