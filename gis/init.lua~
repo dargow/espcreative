@@ -19,19 +19,19 @@ for b=1, 15 do
 	table.insert(colors, '00'..'00'..b)
 end
 for k, colorcode in next, colors do
---	minetest.register_alias("gis:"..colorcode, "air")
-	minetest.register_node(
-		'gis:'..colorcode, {
-			description = "GIS:"..colorcode,
-			tiles = { colorcode..'.png' },
-			light_source = 3,
-			groups = {oddly_breakable_by_hand=1, gis=1},
+	minetest.register_alias("gis:"..colorcode, "air")
+--	minetest.register_node(
+--		'gis:'..colorcode, {
+--			description = "GIS:"..colorcode,
+--			tiles = { colorcode..'.png' },
+--			light_source = 3,
+--			groups = {oddly_breakable_by_hand=1, gis=1},
 			--[[after_place_node = function(pos, placer, itemstack, pointed_thing)
 				local meta = minetest.get_meta(pos)
 				meta:set_string("infotext", "Gis:"..colorcode);
 				meta:set_int("placed", os.clock()*1000);
 			end,--]]
-	})	
+--	})	
 end
 
 
