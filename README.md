@@ -31,7 +31,7 @@ Current mods:
 23. ✔?hiking - Fixed, can create crash if the space above the pole is not empty
 24. ✔?homedecor_modpack - Fixed, but probably need remove or merge some color nodes
 25. ✔ilights - Fixed
-26. ✔?infrastructure - Fixed
+26. ✔?infrastructure - Fixed, probably need remove recipes and merge blocks with streets mod
 27. ~~interact - Removed. Must be replace to other same mod~~
 28. ✔?inventory_plus - Fixed.
 29. ✔jumping - Fixed
@@ -63,7 +63,7 @@ Current mods:
 55. ~~names_per_ip - Removed. Not need more~~
 56. ✔nether - Fixed
 57. ✔octutool - Fixed
-58. ?pipeworks
+58. x?pipeworks
 59. ✔pizza - Works
 60. ✔?plasticbox - Fixed
 61. ✔pyramids - Works
@@ -79,7 +79,7 @@ Current mods:
 71. ✔telemosaic - Works. Nothig do
 72. ~~torches - Removed - now in MTG~~
 73. ✔travelnet - Updated
-74. ?tronblocks - ??? Probably need remove
+74. x?tronblocks - ??? Probably need remove
 75. ✔unifiedbricks - Updated
 76. ✔unifieddyes - Updated
 77. ✔windmill - Fixed
@@ -93,7 +93,7 @@ Current mods:
 ✔ - Works good
 ✔? - Works, potentially can be corrected
 ? - Not tested
-x? - Critically importatant fix
+x? - Need importatant fix
 
 Additional Mods
 ---
