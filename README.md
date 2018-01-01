@@ -24,9 +24,9 @@ Current mods:
 16. ✔factory_bridges - Removed recipes.
 17. ?farming_plus
 18. ?food
-19. x?gis - ~~Fixed~~ Need restore old version
-20. ?gloopblocks
-21. ?glowblocks
+19. ✔?gis - Fixed, probably need add replace to few blocks
+20. ✔gloopblocks - Fixed
+21. ?glowblocks 
 22. ?greenscreen
 23. ?hiking
 24. ?homedecor_modpack

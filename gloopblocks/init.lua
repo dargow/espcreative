@@ -547,127 +547,12 @@ end
 
 -- Tools
 
-minetest.register_tool("gloopblocks:pick_cement", {
-	description = S("Cement Pickaxe"),
-	inventory_image = "gloopblocks_cement_pick.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=1,
-		groupcaps={
-			cracky={times={[1]=3.50, [2]=1.40, [3]=0.90}, uses=25, maxlevel=2}
-		},
-		damage_groups = {fleshy=4},
-	},
-})
 
-minetest.register_tool("gloopblocks:shovel_cement", {
-	description = S("Cement Shovel"),
-	inventory_image = "gloopblocks_cement_shovel.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=1,
-		groupcaps={
-			crumbly={times={[1]=1.50, [2]=0.60, [3]=0.45}, uses=25, maxlevel=2}
-		},
-		damage_groups = {fleshy=4},
-	},
-})
 
-minetest.register_tool("gloopblocks:axe_cement", {
-	description = S("Cement Axe"),
-	inventory_image = "gloopblocks_cement_axe.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=1,
-		groupcaps={
-			choppy={times={[1]=3.00, [2]=1.30, [3]=0.80}, uses=25, maxlevel=2},
-			fleshy={times={[2]=1.20, [3]=0.65}, uses=30, maxlevel=1}
-		},
-		damage_groups = {fleshy=4},
-	},
-})
 
-minetest.register_tool("gloopblocks:sword_cement", {
-	description = S("Cement Sword"),
-	inventory_image = "gloopblocks_cement_sword.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=1,
-		groupcaps={
-			fleshy={times={[1]=1.60, [2]=0.80, [3]=0.40}, uses=15, maxlevel=2},
-			snappy={times={[2]=0.75, [3]=0.35}, uses=30, maxlevel=1},
-			choppy={times={[3]=0.80}, uses=30, maxlevel=0}
-		},
-		damage_groups = {fleshy=6},
-	}
-})
-
-minetest.register_tool("gloopblocks:pick_evil", {
-	description = S("Evil Pickaxe"),
-	inventory_image = "gloopblocks_evil_pick.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=3,
-		groupcaps={
-			cracky={times={[1]=0.10, [2]=0.10, [3]=0.10}, uses=10, maxlevel=2}
-		},
-		damage_groups = {fleshy=6},
-	},
-})
-
-minetest.register_tool("gloopblocks:shovel_evil", {
-	description = S("Evil Shovel"),
-	inventory_image = "gloopblocks_evil_shovel.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=3,
-		groupcaps={
-			crumbly={times={[1]=0.05, [2]=0.05, [3]=0.05}, uses=10, maxlevel=2}
-		},
-		damage_groups = {fleshy=6},
-	},
-})
-
-minetest.register_tool("gloopblocks:axe_evil", {
-	description = S("Evil Axe"),
-	inventory_image = "gloopblocks_evil_axe.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=3,
-		groupcaps={
-			choppy={times={[1]=0.15, [2]=0.15, [3]=0.15}, uses=10, maxlevel=2},
-			fleshy={times={[1]=0.15, [2]=0.15, [3]=0.15}, uses=10, maxlevel=2} 
-		},
-		damage_groups = {fleshy=6},
-	},
-})
-
-minetest.register_tool("gloopblocks:sword_evil", {
-	description = S("Evil Sword"),
-	inventory_image = "gloopblocks_evil_sword.png",
-	tool_capabilities = {
-		full_punch_interval = 1.0,
-		max_drop_level=3,
-		groupcaps={
-			fleshy={times={[1]=0.20, [2]=0.20, [3]=0.20}, uses=10, maxlevel=2},
-			snappy={times={[1]=0.20, [2]=0.20, [3]=0.20}, uses=10, maxlevel=2},
-			choppy={times={[1]=0.20, [2]=0.20, [3]=0.20}, uses=10, maxlevel=2}
-		},
-		damage_groups = {fleshy=8},
-	}
-})
 
 -- Other items
 
-minetest.register_craftitem("gloopblocks:wet_cement", {
-	description = S("Wet Cement"),
-	inventory_image = "gloopblocks_wet_cement.png",
-})
-
-minetest.register_craftitem("gloopblocks:evil_stick", {
-	description = S("Evil Stick"),
-	inventory_image = "gloopblocks_evil_stick.png",
-})
 
 -- define lava-cooling-based nodes and hook into the default lavacooling
 -- functions to generate basalt, pumice, and obsidian
@@ -753,7 +638,4 @@ minetest.register_node("gloopblocks:fence_steel", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2 },
 	sounds = default.node_sound_stone_defaults(),
 })
-
-dofile(minetest.get_modpath("gloopblocks").."/crafts.lua")
-
 print(S("Gloopblocks Loaded!"))
