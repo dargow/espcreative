@@ -28,7 +28,7 @@ Current mods:
 20. ✔gloopblocks - Fixed
 21. ✔?glowblocks - Works, probably need remove animation and mesecons depends
 22. ✔?greenscreen - Fixed, probably need merge with gis mod.
-23. ?hiking
+23. ✔?hiking - Fixed, can create crash if the space above the pole is not empty
 24. ?homedecor_modpack
 25. ?ilights
 26. ?infrastructure
