@@ -7,22 +7,8 @@ VERSION="0.3"
 print(NAME.." "..VERSION)
 
 -- items
-minetest.register_craftitem("pizza:pizza_dough", {
-    description = "Pizza Dough",
-    inventory_image = "pizza_dough.png",
-})
 
-minetest.register_craftitem("pizza:pizza", {
-    description = "Pizza",
-    inventory_image = "pizza.png",
-    on_use = minetest.item_eat(30)
-})
 
-minetest.register_craftitem("pizza:pizzaslice", {
-    description = "Pizza Slice",
-    inventory_image = "pizzaslice.png",
-    on_use = minetest.item_eat(5)
-})
 
 minetest.register_node("pizza:pizzabox", {
     description = "Pizzabox",
@@ -46,33 +32,4 @@ minetest.register_node("pizza:pizzabox", {
     }
 })
 
--- recipes
-minetest.register_craft({
-    output = "pizza:pizza_dough",
-    recipe = {
-        {"farming:flour", "food:cheese", "food:tomato"}
-    }
-})
 
-minetest.register_craft({
-    output = "pizza:pizza",
-    type = "cooking",
-    cooktime = 50.0,
-    recipe = "pizza:pizza_dough"
-})
-
-minetest.register_craft({
-    output = "pizza:pizzaslice 6",
-    recipe = {
-        {"pizza:pizza"},
-    }
-})
-
-minetest.register_craft({
-    output = "pizza:pizzabox",
-    recipe = {
-        {"", "default:paper", ""},
-        {"default:paper", "pizza:pizza", "default:paper"},
-        {"", "default:paper", ""}
-    }
-})
