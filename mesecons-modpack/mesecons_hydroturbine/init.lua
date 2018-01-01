@@ -72,10 +72,10 @@ nodenames = {"mesecons_hydroturbine:hydro_turbine_off"},
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local waterpos={x=pos.x, y=pos.y+1, z=pos.z}
-		if is_flowing_water(waterpos) then
+		
 			minetest.set_node(pos, {name="mesecons_hydroturbine:hydro_turbine_on"})
 			mesecon.receptor_on(pos)
-		end
+		
 	end,
 })
 
@@ -85,19 +85,10 @@ nodenames = {"mesecons_hydroturbine:hydro_turbine_on"},
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local waterpos={x=pos.x, y=pos.y+1, z=pos.z}
-		if not is_flowing_water(waterpos) then
-			minetest.set_node(pos, {name="mesecons_hydroturbine:hydro_turbine_off"})
-			mesecon.receptor_off(pos)
-		end
+		
+--			minetest.set_node(pos, {name="mesecons_hydroturbine:hydro_turbine_off"})
+--			mesecon.receptor_off(pos)
+		
 	end,
-})
-
-minetest.register_craft({
-	output = "mesecons_hydroturbine:hydro_turbine_off 2",
-	recipe = {
-	{"","default:stick", ""},
-	{"default:stick", "default:steel_ingot", "default:stick"},
-	{"","default:stick", ""},
-	}
 })
 
