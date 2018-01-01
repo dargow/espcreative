@@ -40,7 +40,7 @@ Current mods:
 32. ✔?mesecons_modpack - Fixed, can be errors.
 33. ✔moreblocks - Fixed
 34. ✔morestones - Fixed
-35. ?mybricks
+35. ✔mybricks - Fixed
 36. ?mychisel
 37. ✔?mycorners - Works, but slow load. New version don't work.
 38. ?mydesk
