@@ -20,7 +20,7 @@ for _, row in ipairs(gslocal.colours) do
 	local description = row[2]
 	local hex = row[3]
 	local item_name = "greenscreen:"..name.."screen"
-	local item_texture = "greenscreen.png^[colorize:#"..hex
+	local item_texture = {"greenscreen.png^[colorize:#"..hex}
 	--BEGIN NODE REGISTRERING!
 	minetest.register_node(item_name, {
 		description = description,
