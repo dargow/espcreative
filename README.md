@@ -31,14 +31,14 @@ Current mods:
 23. ✔?hiking - Fixed, can create crash if the space above the pole is not empty
 24. ✔?homedecor_modpack - Fixed, but probably need remove or merge some color nodes
 25. ✔ilights - Fixed
-26. ?infrastructure
+26. ✔?infrastructure - Fixed
 27. ~~interact - Removed. Must be replace to other same mod~~
 28. ✔?inventory_plus - Fixed.
 29. ✔jumping - Fixed
 30. ✔lapis
 31. ✔mesecar
 32. ?mesecons_modpack
-33. ?moreblocks
+33. ✔moreblocks - Fixed
 34. ?morestones
 35. ?mybricks
 36. ?mychisel

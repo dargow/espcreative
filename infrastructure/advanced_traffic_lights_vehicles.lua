@@ -21,7 +21,7 @@
 
 	for i = 1, 4 do
 		minetest.register_node("infrastructure:traffic_lights_vehicles_top_"..tostring(i), {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
@@ -59,7 +59,7 @@
 			description = "Traffic lights for vehicles",
 			inventory_image = "infrastructure_traffic_lights_vehicles.png",
 			wield_image = "infrastructure_traffic_lights_vehicles.png",
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
@@ -143,7 +143,7 @@
 		description = "Traffic lights for vehicles",
 		inventory_image = "infrastructure_traffic_lights_vehicles.png",
 		wield_image = "infrastructure_traffic_lights_vehicles.png",
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",

@@ -77,7 +77,7 @@
 	})
 
 		minetest.register_node("infrastructure:automatic_warning_device_top", {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_automatic_warning_device_top_side.png",
@@ -116,7 +116,7 @@
 		end
 
 		minetest.register_node("infrastructure:automatic_warning_device_middle_right_"..tostring(i), {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
@@ -144,7 +144,7 @@
 		})
 
 		minetest.register_node("infrastructure:automatic_warning_device_middle_left_"..tostring(i), {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
@@ -183,7 +183,7 @@
 		end
 
 		minetest.register_node("infrastructure:automatic_warning_device_middle_center_"..tostring(i), {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_automatic_warning_device_middle_center_side.png",
@@ -217,7 +217,7 @@
 	end
 
 		minetest.register_node("infrastructure:automatic_warning_device_middle", {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_automatic_warning_device_middle_side.png",
@@ -247,7 +247,7 @@
 			description = "Automatic warning device",
 			inventory_image = "infrastructure_automatic_warning_device.png",
 			wield_image = "infrastructure_automatic_warning_device.png",
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_automatic_warning_device_bottom.png",

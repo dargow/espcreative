@@ -20,7 +20,7 @@
 
 	minetest.register_node("infrastructure:manhole_cover_closed", {
 		description = "Manhole cover",
-		tile_images = {
+		tiles = {
 			"infrastructure_manhole_cover_top_bottom.png",
 			"infrastructure_manhole_cover_top_bottom.png",
 			"infrastructure_manhole_cover_side.png",
@@ -56,7 +56,7 @@
 	})
 
 	minetest.register_node("infrastructure:manhole_cover_opened", {
-		tile_images = {
+		tiles = {
 			"infrastructure_manhole_cover_side.png",
 			"infrastructure_manhole_cover_side.png",
 			"infrastructure_manhole_cover_side.png",
