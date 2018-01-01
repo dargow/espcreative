@@ -30,7 +30,7 @@ Current mods:
 22. ✔?greenscreen - Fixed, probably need merge with gis mod.
 23. ✔?hiking - Fixed, can create crash if the space above the pole is not empty
 24. ✔?homedecor_modpack - Fixed, but probably need remove or merge some color nodes
-25. ?ilights
+25. ✔ilights - Fixed
 26. ?infrastructure
 27. ~~interact - Removed. Must be replace to other same mod~~
 28. ✔?inventory_plus - Fixed.
