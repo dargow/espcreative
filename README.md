@@ -29,7 +29,7 @@ Current mods:
 21. ✔?glowblocks - Works, probably need remove animation and mesecons depends
 22. ✔?greenscreen - Fixed, probably need merge with gis mod.
 23. ✔?hiking - Fixed, can create crash if the space above the pole is not empty
-24. ?homedecor_modpack
+24. ✔?homedecor_modpack - Fixed, but probably need remove or merge some color nodes
 25. ?ilights
 26. ?infrastructure
 27. ~~interact - Removed. Must be replace to other same mod~~
@@ -37,7 +37,7 @@ Current mods:
 29. ✔jumping - Fixed
 30. ✔lapis
 31. ✔mesecar
-32. ✔?mesecons_modpack - Fixed, but probably need remove or merge some color nodes
+32. mesecons_modpack
 33. ?moreblocks
 34. ?morestones
 35. ?mybricks
@@ -88,6 +88,7 @@ Current mods:
 80. ✔xdecor - Updated
 81. ✔xtraores - Fixed
 82. ✔aliases - Added. For aliases and other changes
+83. ✔keyword_interact - Added
 
 ✔ - Works good
 ✔? - Works, potentially can be corrected
