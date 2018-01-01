@@ -24,11 +24,11 @@ Current mods:
 16. ✔factory_bridges - Removed recipes.
 17. ?farming_plus
 18. ?food
-19. ✔?gis - Fixed, probably need add replace to few blocks
+19. ✔?gis - Fixed, probably need to remove and combine similar blocks
 20. ✔gloopblocks - Fixed
 21. ✔?glowblocks - Works, probably need remove animation and mesecons depends
 22. ✔?greenscreen - Fixed, probably need merge with gis mod.
-23. ?hiking
+23. ✔?hiking - Fixed, can create crash if the space above the pole is not empty
 24. ?homedecor_modpack
 25. ?ilights
 26. ?infrastructure

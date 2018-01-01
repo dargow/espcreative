@@ -70,13 +70,5 @@ for i in ipairs(lavalamps_list) do
 	    end,
 	})
 
-	minetest.register_craft({
-		output = "lavalamp:"..colour,
-		recipe = {
-			{"", "wool:"..colour, "", },
-			{"", "bucket:bucket_water", "", },
-			{"", "wool:black", "", }
-		}
-	})
 	
 end

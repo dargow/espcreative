@@ -152,22 +152,22 @@ function homedecor.handle_inventory(name, def, original_def)
 		end
 	end
 
-	local lockable = inventory.lockable
-	if lockable then
-		local locked_def = table.copy(original_def)
-		locked_def.description = S("Locked %s"):format(def.description or name)
-
-		local locked_inventory = locked_def.inventory
-		locked_inventory.locked = true
-		locked_inventory.lockable = nil -- avoid loops of locked locked stuff
-
-		local locked_name = name .. "_locked"
-		homedecor.register(locked_name, locked_def)
-		minetest.register_craft({
-			type = "shapeless",
-			output = "homedecor:" .. locked_name,
-			recipe = { "homedecor:" .. name, "default:steel_ingot" }
-		})
-	end
+--	local lockable = inventory.lockable
+--	if lockable then
+--		local locked_def = table.copy(original_def)
+--		locked_def.description = S("Locked %s"):format(def.description or name)
+--
+--		local locked_inventory = locked_def.inventory
+--		locked_inventory.locked = true
+--		locked_inventory.lockable = nil -- avoid loops of locked locked stuff
+--
+--		local locked_name = name .. "_locked"
+--		homedecor.register(locked_name, locked_def)
+--		minetest.register_craft({
+--			type = "shapeless",
+--			output = "homedecor:" .. locked_name,
+--			recipe = { "homedecor:" .. name, "default:steel_ingot" }
+--		})
+--	end
 
 end

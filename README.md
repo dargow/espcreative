@@ -24,7 +24,7 @@ Current mods:
 16. ✔factory_bridges - Removed recipes.
 17. ?farming_plus
 18. ?food
-19. ✔?gis - Fixed, probably need add replace to few blocks
+19. ✔?gis - Fixed, probably need to remove and combine similar blocks
 20. ✔gloopblocks - Fixed
 21. ✔?glowblocks - Works, probably need remove animation and mesecons depends
 22. ✔?greenscreen - Fixed, probably need merge with gis mod.
@@ -37,7 +37,7 @@ Current mods:
 29. ✔jumping - Fixed
 30. ✔lapis
 31. ✔mesecar
-32. ?mesecons_modpack
+32. ✔?mesecons_modpack - Fixed, but probably need remove or merge some color nodes
 33. ?moreblocks
 34. ?morestones
 35. ?mybricks
