@@ -47,25 +47,11 @@ minetest.register_node("farming_plus:potato", {
 	walkable = false,
 	drawtype = "plantlike",
 	tiles = {"farming_potato_3.png"},
-	drop = {
-		max_items = 6,
-		items = {
-			{ items = {'farming_plus:potato_seed'} },
-			{ items = {'farming_plus:potato_seed'}, rarity = 2},
-			{ items = {'farming_plus:potato_seed'}, rarity = 5},
-			{ items = {'farming_plus:potato_item'} },
-			{ items = {'farming_plus:potato_item'}, rarity = 2 },
-			{ items = {'farming_plus:potato_item'}, rarity = 5 }
-		}
-	},
 	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_craftitem("farming_plus:potato_item", {
-	description = S("Potato"),
-	inventory_image = "farming_potato.png",
-})
+
 
 farming.add_plant("farming_plus:potato", {"farming_plus:potato_1", "farming_plus:potato_2"}, 50, 20)
 

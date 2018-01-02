@@ -22,7 +22,7 @@ Current mods:
 14. ✔doors_modular - Works, not need fix
 15. ?digilines
 16. ✔factory_bridges - Removed recipes.
-17. ?farming_plus
+17. ✔?farming_plus - Fixed. Probably need remove seeds
 18. ?food
 19. ✔?gis - Fixed, probably need to remove and combine similar blocks
 20. ✔gloopblocks - Fixed

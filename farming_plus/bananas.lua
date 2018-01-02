@@ -23,15 +23,6 @@ minetest.register_node("farming_plus:banana_leaves", {
 	tiles = {"farming_banana_leaves.png"},
 	paramtype = "light",
 	groups = {snappy=3, leafdecay=3, flammable=2, not_in_creative_inventory=1},
- 	drop = {
-		max_items = 1,
-		items = {
-			{
-				items = {'farming_plus:banana_sapling'},
-				rarity = 20,
-			},
-		}
-	},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -64,7 +55,7 @@ minetest.register_node("farming_plus:banana", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2,leafdecay=3,leafdecay_drop=1},
+	groups = {fleshy=3,dig_immediate=3,flammable=2,leafdecay=3,leafdecay_drop=1, not_in_creative_inventory=1},
 	sounds = default.node_sound_defaults(),
 	
 	on_use = minetest.item_eat(6),

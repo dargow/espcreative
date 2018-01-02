@@ -63,25 +63,9 @@ minetest.register_node("farming_plus:carrot", {
 	walkable = false,
 	drawtype = "plantlike",
 	tiles = {"farming_carrot_4.png"},
-	drop = {
-		max_items = 6,
-		items = {
-			{ items = {'farming_plus:carrot_seed'} },
-			{ items = {'farming_plus:carrot_seed'}, rarity = 2},
-			{ items = {'farming_plus:carrot_seed'}, rarity = 5},
-			{ items = {'farming_plus:carrot_item'} },
-			{ items = {'farming_plus:carrot_item'}, rarity = 2 },
-			{ items = {'farming_plus:carrot_item'}, rarity = 5 }
-		}
-	},
 	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_craftitem("farming_plus:carrot_item", {
-	description = S("Carrot"),
-	inventory_image = "farming_carrot.png",
-	on_use = minetest.item_eat(3),
-})
 
 farming.add_plant("farming_plus:carrot", {"farming_plus:carrot_1", "farming_plus:carrot_2", "farming_plus:carrot_3"}, 50, 20)

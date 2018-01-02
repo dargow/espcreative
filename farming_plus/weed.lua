@@ -37,8 +37,3 @@ minetest.register_abm({
 })
 
 -- ========= FUEL =========
-minetest.register_craft({
-	type = "fuel",
-	recipe = "farming:weed",
-	burntime = 1
-})

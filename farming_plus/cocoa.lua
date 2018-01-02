@@ -23,15 +23,7 @@ minetest.register_node("farming_plus:cocoa_leaves", {
 	tiles = {"farming_banana_leaves.png"},
 	paramtype = "light",
 	groups = {snappy=3, leafdecay=3, flammable=2, not_in_creative_inventory=1},
- 	drop = {
-		max_items = 1,
-		items = {
-			{
-				items = {'farming_plus:cocoa_sapling'},
-				rarity = 20,
-			},
-		}
-	},
+ 	
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -65,17 +57,8 @@ minetest.register_node("farming_plus:cocoa", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2,leafdecay=3,leafdecay_drop=1},
+	groups = {fleshy=3,dig_immediate=3,flammable=2,leafdecay=3,leafdecay_drop=1, not_in_creative_inventory=1},
 	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_craftitem("farming_plus:cocoa_bean", {
-	description = "Cocoa Bean",
-	inventory_image = "farming_cocoa_bean.png",
-})
 
-minetest.register_craft({
-	output = "farming_plus:cocoa_bean 10",
-	type = "shapeless",
-	recipe = {"farming_plus:cocoa"},
-})

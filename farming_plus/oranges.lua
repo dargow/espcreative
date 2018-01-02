@@ -63,25 +63,8 @@ minetest.register_node("farming_plus:orange", {
 	walkable = false,
 	drawtype = "plantlike",
 	tiles = {"farming_orange_4.png"},
-	drop = {
-		max_items = 6,
-		items = {
-			{ items = {'farming_plus:orange_seed'} },
-			{ items = {'farming_plus:orange_seed'}, rarity = 2},
-			{ items = {'farming_plus:orange_seed'}, rarity = 5},
-			{ items = {'farming_plus:orange_item'} },
-			{ items = {'farming_plus:orange_item'}, rarity = 2 },
-			{ items = {'farming_plus:orange_item'}, rarity = 5 }
-		}
-	},
 	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1},
 	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_craftitem("farming_plus:orange_item", {
-	description = S("Orange"),
-	inventory_image = "farming_orange.png",
-	on_use = minetest.item_eat(4),
 })
 
 farming.add_plant("farming_plus:orange", {"farming_plus:orange_1", "farming_plus:orange_2", "farming_plus:orange_3"}, 50, 20)
