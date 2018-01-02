@@ -58,8 +58,8 @@ Current mods:
 50. ?mypaths
 51. ?myroofs
 52. ?myshetmetal
-53. ?mysponge
-54. ?mywoodslopes
+53. ✔mysponge - Fixed
+54. ✔mywoodslopes - Fixed
 55. ~~names_per_ip - Removed. Not need more~~
 56. ✔nether - Fixed
 57. ✔octutool - Fixed
