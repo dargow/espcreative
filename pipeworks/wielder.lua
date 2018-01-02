@@ -185,13 +185,13 @@ local function register_wielder(data)
 	for _, state in ipairs({ "off", "on" }) do
 		local groups = { snappy=2, choppy=2, oddly_breakable_by_hand=2, mesecon=2, tubedevice=1, tubedevice_receiver=1 }
 		if state == "on" then groups.not_in_creative_inventory = 1 end
-		local tile_images = {}
+		local tiles = {}
 		for _, face in ipairs({ "top", "bottom", "side2", "side1", "back", "front" }) do
-			table.insert(tile_images, data.texture_base.."_"..face..(data.texture_stateful[face] and "_"..state or "")..".png")
+			table.insert(tiles, data.texture_base.."_"..face..(data.texture_stateful[face] and "_"..state or "")..".png")
 		end
 		minetest.register_node(data.name_base.."_"..state, {
 			description = data.description,
-			tiles = tile_images,
+			tiles = tiles,
 			mesecons = {
 				effector = {
 					rules = pipeworks.rules_all,

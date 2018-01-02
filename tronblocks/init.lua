@@ -8,4 +8,4 @@ dofile(minetest.get_modpath("tronblocks").."/crafting.lua") --craft recipes.
 dofile(minetest.get_modpath("tronblocks").."/noderegister.lua") --node registry.
 
 --support for moreblocks circular saw
-if minetest.get_modpath("moreblocks") then dofile(minetest.get_modpath("tronblocks").."/sawsupport.lua") end
+--if minetest.get_modpath("moreblocks") then dofile(minetest.get_modpath("tronblocks").."/sawsupport.lua") end

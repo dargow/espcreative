@@ -334,7 +334,7 @@ end
 
 
 --Tar
-minetest.register_alias("tar", "building_blocks:Tar")
+--minetest.register_alias("tar", "building_blocks:Tar")
 minetest.register_alias("fakegrass", "building_blocks:fakegrass")
 minetest.register_alias("tar_knife", "building_blocks:knife")
 minetest.register_alias("adobe", "building_blocks:Adobe")

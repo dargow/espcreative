@@ -194,12 +194,12 @@ minetest.register_node("steel:roofing_wall", {
 })
 
 if homedecor_register_slope and homedecor_register_roof then
-	homedecor_register_slope("steel", "roofing", 
-		"steel:roofing", 
-		{bendy=2,snappy=1,dig_immediate=2}, 
-		{"corrugated_steel.png"}, 
-		"Corrugated steel roofing"
-	)
+--	homedecor_register_slope("steel", "roofing", 
+--		"steel:roofing", 
+--		{bendy=2,snappy=1,dig_immediate=2}, 
+--		{"corrugated_steel.png"}, 
+--		"Corrugated steel roofing"
+--	)
 	homedecor_register_roof("steel", "roofing", 
 		{bendy=2,snappy=1,dig_immediate=2}, 
 		{"corrugated_steel.png"}, 

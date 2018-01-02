@@ -340,8 +340,7 @@ minetest.register_alias("hiking:very_tall_bottom", "air")
 minetest.register_alias("hiking:infinite_pole_top", "air")
 minetest.register_alias("hiking:infinite_pole_middle", "air")
 minetest.register_alias("hiking:infinite_pole_bottom", "air")
-minetest.register_alias("hiking:illuminated_pole_top", "air")
-minetest.register_alias("hiking:illuminated_pole_bottom", "air")
+
 --mk_hiking_pole("pole", "Pole sign", "hiking_pole_sign_bottom_.png", {}, "hiking_pole_sign.png")
 
 

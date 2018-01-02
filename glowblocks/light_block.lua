@@ -12,7 +12,7 @@ minetest.register_alias("glowblocks:lightblockgrass", "glowblocks:lightblockgras
 -- --------- --
 
 minetest.register_node("glowblocks:lightblock_on", {
-tile_images = {"glowblocks_light.png"},
+tiles = {"glowblocks_light.png"},
 inventory_image = "glowblocks_light_icon.png",
 drawtype = "raillike",
 walkable = false,
@@ -27,7 +27,7 @@ mesecons = {conductor = {
 })
 
 minetest.register_node("glowblocks:lightblock_off", {
-tile_images = {"glowblocks_light.png"},
+tiles = {"glowblocks_light.png"},
 drawtype = "raillike",
 walkable = false,
 description = "Light Block Panel",
@@ -54,7 +54,7 @@ recipe = {
 -- --------- --
 
 minetest.register_node("glowblocks:lightblockdirt_on", {
-tile_images = {"default_dirt.png^glowblocks_light.png"},
+tiles = {"default_dirt.png^glowblocks_light.png"},
 description = "Light Block Dirt",
 groups={snappy=2,choppy=2,oddly_breakable_by_hand=2},
 light_source = 14,
@@ -66,7 +66,7 @@ onstate = "glowblocks:lightblockdirt_off",
 })
 
 minetest.register_node("glowblocks:lightblockdirt_off", {
-tile_images = {"default_dirt.png^glowblocks_light.png"},
+tiles = {"default_dirt.png^glowblocks_light.png"},
 description = "Light Block Dirt",
 groups={snappy=2,choppy=2,oddly_breakable_by_hand=2,not_in_creative_inventory=1},
 light_source = 0,
@@ -91,7 +91,7 @@ recipe = {
 -- --------- --
 
 minetest.register_node("glowblocks:lightblockstone_on", {
-tile_images = {"default_stone.png^glowblocks_light.png"},
+tiles = {"default_stone.png^glowblocks_light.png"},
 description = "Light Block Stone",
 groups={snappy=2,choppy=2,oddly_breakable_by_hand=2},
 light_source = 14,
@@ -103,7 +103,7 @@ onstate = "glowblocks:lightblockstone_off",
 })
 
 minetest.register_node("glowblocks:lightblockstone_off", {
-tile_images = {"default_stone.png^glowblocks_light.png"},
+tiles = {"default_stone.png^glowblocks_light.png"},
 description = "Light Block Stone",
 groups={snappy=2,choppy=2,oddly_breakable_by_hand=2,not_in_creative_inventory=1},
 light_source = 0,
