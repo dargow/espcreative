@@ -47,16 +47,16 @@ Current mods:
 39. ~~mydfences - Removed~~
 40. ✔mydoors - Updated
 41. ✔myfences - Works, but new version don't work
-42. ?myholeinthewall
-43. ?myladders
-44. ?mylandscaping
+42. ✔myholeinthewall - Works. Probably need support for more nodes
+43. ✔myladders - Works
+44. ✔mylandscaping - Fixed
 45. ✔mylights - Fixed
-46. ?mymasonhammer
-47. ?mymeshnodes
-48. ?mymillwork
-49. ?mymulch
-50. ?mypaths
-51. ?myroofs
+46. ✔mymasonhammer - Works. Probably need support for more nodes
+47. ✔mymeshnodes - Works. Probably need support for more nodes
+48. ✔mymillwork - Works. Probably need support for more nodes
+49. ✔mymulch - Works
+50. ✔mypaths - Fixed
+51. ✔myroofs - Works
 52. ✔myshetmetal - Fixed
 53. ✔mysponge - Fixed
 54. ✔mywoodslopes - Fixed
