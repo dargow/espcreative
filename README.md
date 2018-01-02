@@ -20,7 +20,7 @@ Current mods:
 12. ✔?crops - Fixed partically
 13. ✔cutepie - Fixed
 14. ✔doors_modular - Works, not need fix
-15. ?digilines
+15. ✔digilines - Fixed
 16. ✔factory_bridges - Removed recipes.
 17. ✔?farming_plus - Fixed. Probably need remove seeds
 18. ~~food - Removed, not need in creative~~
