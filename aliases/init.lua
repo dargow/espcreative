@@ -26,3 +26,6 @@ minetest.register_alias("homedecor:nightstand_mahogany_two_drawers_locked", "hom
 minetest.register_alias("homedecor:nightstand_mahogany_one_drawer_locked", "homedecor:nightstand_mahogany_one_drawer")
 minetest.register_alias("homedecor:microwave_oven_locked", "homedecor:microwave_oven")
 minetest.register_alias("building_blocks:fakegrass", "dirt_with_grass")
+minetest.register_alias("mydfences:fence_wood_pine", "default:fence_pine_wood")
+minetest.register_alias("mydfences:fence_wood_acacia", "default:fence_acacia_wood")
+minetest.register_alias("mydfences:fence_wood_jungle", "default:fence_junglewood")

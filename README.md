@@ -41,12 +41,12 @@ Current mods:
 33. ✔moreblocks - Fixed
 34. ✔morestones - Fixed
 35. ✔mybricks - Fixed
-36. ?mychisel
+36. ✔mychisel - Updated
 37. ✔?mycorners - Works, but slow load. New version don't work.
-38. ?mydesk
-39. ?mydfences
+38. ✔mydesk - Updated
+39. ~~mydfences - Removed~~
 40. ✔mydoors - Updated
-41. ?myfences
+41. ✔myfences - Works, but new version don't work
 42. ?myholeinthewall
 43. ?myladders
 44. ?mylandscaping
@@ -65,7 +65,7 @@ Current mods:
 57. ✔octutool - Fixed
 58. ✔?pipeworks - Fixed, probably need remove some nodes or remove chests override
 59. ✔pizza - Works
-60. ✔?plasticbox - Fixed
+60. ✔?plasticbox - Fixed, probably need correct colors.
 61. ✔pyramids - Works
 62. ✔quartz - Fixed
 63. ✔rainbow_ore - Removed. Added alias
@@ -79,7 +79,7 @@ Current mods:
 71. ✔telemosaic - Works. Nothig do
 72. ~~torches - Removed - now in MTG~~
 73. ✔travelnet - Updated
-74. x?tronblocks - ??? Probably need remove
+74. ✔tronblocks - ??? Probably need remove
 75. ✔unifiedbricks - Updated
 76. ✔unifieddyes - Updated
 77. ✔windmill - Fixed
