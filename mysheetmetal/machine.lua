@@ -95,7 +95,7 @@ on_construct = function(pos)
 	local meta = minetest.get_meta(pos)
 	meta:set_string("formspec", "invsize[10,11;]"..
 		"background[-0.15,-0.25;10.40,11.75;mysheetmetal_background.png]"..
-		"label[3,5;Steel Ingot:]"..
+		"label[3,5;Steel Block:]"..
 		"list[current_name;ingot;3,5.5;1,1;]"..
 		"label[4.5,5;White Dye:]"..
 		"list[current_name;ingot2;4.5,5.5;1,1;]"..
@@ -271,7 +271,7 @@ then
 ----------------------------------------------------------------------------------
 --register nodes
 ----------------------------------------------------------------------------------
-		if ingotstack:get_name()=="default:steel_ingot" and
+		if ingotstack:get_name()=="default:steelblock" and
 		   ingotstack2:get_name()=="dye:white" then
 				make_ok = "1"
 		end

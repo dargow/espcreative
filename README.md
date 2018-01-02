@@ -57,7 +57,7 @@ Current mods:
 49. ?mymulch
 50. ?mypaths
 51. ?myroofs
-52. ?myshetmetal
+52. ✔myshetmetal - Fixed
 53. ✔mysponge - Fixed
 54. ✔mywoodslopes - Fixed
 55. ~~names_per_ip - Removed. Not need more~~
