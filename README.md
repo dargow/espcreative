@@ -37,7 +37,7 @@ Current mods:
 29. ✔jumping - Fixed
 30. ✔lapis
 31. ✔mesecar
-32. ✔?mesecons_modpack - Fixed, can be errors.
+32. ~~✔?mesecons_modpack - Removed, uses oficial repo.~~
 33. ✔moreblocks - Fixed
 34. ✔morestones - Fixed
 35. ✔mybricks - Fixed
@@ -101,6 +101,6 @@ These mods are not included in the repo because the current versions should be u
 
 1. sban - https://github.com/shivajiva101/sban
 2. mese_restriction - https://github.com/Ezhh/mese_restriction
-3. ~~mesecons - https://github.com/minetest-mods/mesecons - moved to mod list~~
+3. mesecons - https://github.com/minetest-mods/mesecons
 4. areas - https://github.com/ShadowNinja/areas
 5. worldedit - https://github.com/Uberi/Minetest-WorldEdit
