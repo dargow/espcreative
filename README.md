@@ -23,7 +23,7 @@ Current mods:
 15. ?digilines
 16. ✔factory_bridges - Removed recipes.
 17. ✔?farming_plus - Fixed. Probably need remove seeds
-18. ?food
+18. ~~food - Removed, not need in creative~~
 19. ✔?gis - Fixed, probably need to remove and combine similar blocks
 20. ✔gloopblocks - Fixed
 21. ✔?glowblocks - Works, probably need remove animation and mesecons depends
