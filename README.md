@@ -63,7 +63,7 @@ Current mods:
 55. ~~names_per_ip - Removed. Not need more~~
 56. ✔nether - Fixed
 57. ✔octutool - Fixed
-58. x?pipeworks
+58. ✔?pipeworks - Fixed, probably need remove some nodes or remove chests override
 59. ✔pizza - Works
 60. ✔?plasticbox - Fixed
 61. ✔pyramids - Works
