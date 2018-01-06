@@ -209,10 +209,7 @@ for i in ipairs( BRIDGE_PARTS ) do
 		        groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
                 });
 
-        minetest.register_craft({
-               output = "bridges:"..BRIDGE_PARTS[i][1]..BRIDGE_PARTS[i][5],
-               recipe = BRIDGE_PARTS[i][4],
-        });
+       
 end
 
 -- alternate receipe for the bridge basis
@@ -266,126 +263,11 @@ end
 		        groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=2}
                 })
 
-        minetest.register_craft({
-               output = "bridges:bridge_large",
-               recipe = { { "", "bridges:bridge_middle", "" },
-                          { "", "bridges:bridge_small",  "" },
-                          { "", "bridges:bridge_middle", "" },
-                         } });
+        
 
 
 
 
 -- special: self-building automatic bridge
 
-minetest.register_node("bridges:bridge_auto", {
 
-       description = "self building bruidge",
-       tiles = { "default_chest_top.png" }, -- looks from all sides like the top of a chest
-       drawtype = "cube",
-       is_ground_content = true,
-       groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
-
-       drop = "", -- all leftover parts are in the "chest"
-
-       on_construct = function(pos)
-          local meta = minetest.env:get_meta(pos);
-          meta:set_string("formspec",
-                          "invsize[8,9;]"..
-                          "list[current_name;main;0,0;8,4;]"..
-                          "list[current_player;main;0,5;8,4;]")
-          meta:set_string("infotext", "Automatic bridge building set - leftover parts")
-          local inv = meta:get_inventory();
-          inv:set_size("main", 8*4);
-       end,
-
-       can_dig = function(pos,player)
-          local meta = minetest.env:get_meta(pos);
-          local inv = meta:get_inventory();
-          return inv:is_empty("main");
-       end,
-
-
-       after_place_node = function(pos, placer)
-
-          local n;
-          local x_dir;
-          local z_dir;
-          local p;
-          local n;
-
-          -- the bridge ought to unfold in the direction the player is looking
-          local dir = placer:get_look_dir();
-          local fdir = minetest.dir_to_facedir(dir);
-
-          -- the player is looking more in x- than in z-direction
-          if( math.abs( dir.x ) > math.abs( dir.z )) then
-            z_dir = 0;
-            if( dir.x > 0 ) then
-              x_dir = 1;
-            else
-              x_dir = -1;
-            end
-          else
-            x_dir = 0;
-            if( dir.z > 0 ) then
-              z_dir = 1;
-            else
-              z_dir = -1;
-            end
-          end
- 
---        print ("x_dir: "..tostring( x_dir ).." z_dir: "..tostring( z_dir ));
-
-          -- we have determined the direction in which the bridge may extend - now lets look how far it can go
-          local i=1;
-          -- how many parts of the bridge remain?
-          local rem_small  = math.floor(MAX_BRIDGE_LENGTH/3);  
-          local rem_middle = MAX_BRIDGE_LENGTH-rem_small;
-          -- extend max. MAX_BRIDGE_LENGTH nodes wide and only if the node needs a bridge (i.e. consists of air)
-          while( i < MAX_BRIDGE_LENGTH ) do 
-
-             -- is there space for a bridge?
-             p = {x=pos.x+(x_dir*i), y=pos.y, z=pos.z+(z_dir*i)};
-             n = minetest.env:get_node(p);
-             if( n == nil or (n.name ~= "air" and n.name ~= 'moonrealm:vacuum' and n.name ~= 'moonrealm:air' and n.name ~= 'moontest:vacuum' and n.name ~= 'moontest:air')) then
-                i = MAX_BRIDGE_LENGTH+1; -- end
---                print("At length "..tostring(i)..": node at target position not air; no place for bridge: "..tostring(n.name));
-             else
-                -- one small bridge is followed by two middle parts
-                if( i%3 == 1 ) then
-                    minetest.env:add_node(p, {name="bridges:bridge_small", param1=0, param2=fdir});
-                    rem_small  = rem_small - 1; -- one small bridge used
---                    print("Placing small bridge at dist "..tostring(i));
-                else
-                    minetest.env:add_node(p, {name="bridges:bridge_middle", param1=0, param2=fdir});
-                    rem_middle = rem_middle -1; -- one middle part used
---                    print("Placing middle bridge at dist "..tostring(i));
-                end
-
-                i = i+1;
-             end
-          end
- 
-
-          -- do we have to give any leftover parts back?
-          local meta = minetest.env:get_meta(pos);
-          local inv = meta:get_inventory();
-
-          if( rem_small > 0 ) then
-             inv:add_item( "main", "bridges:bridge_small "..tostring( rem_small ));
-          end
-
-          if( rem_middle > 0 ) then
-             inv:add_item( "main", "bridges:bridge_middle "..tostring( rem_middle ));
-          end
-       end,
-})
-
-
-        minetest.register_craft({
-               output = "bridges:bridge_auto",
-               recipe = { { "bridges:bridge_large", "bridges:bridge_large", "bridges:bridge_large" },
-                          { "bridges:bridge_large", "bridges:bridge_large", "bridges:bridge_large" },
-                          { "bridges:bridge_large", "bridges:bridge_large", "bridges:bridge_large" },
-                         } });

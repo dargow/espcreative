@@ -85,7 +85,7 @@ Current mods:
 77. ✔windmill - Fixed
 78. ✔?wine - Updated
 79. ~~worldedit_modpack - Removed - use official repo~~
-80. ✔xdecor - Updated
+80. ~~✔xdecor - Moved to official repo~~
 81. ✔xtraores - Fixed
 82. ✔aliases - Added. For aliases and other changes
 83. ✔keyword_interact - Added
@@ -104,3 +104,4 @@ These mods are not included in the repo because the current versions should be u
 3. mesecons - https://github.com/minetest-mods/mesecons
 4. areas - https://github.com/ShadowNinja/areas
 5. worldedit - https://github.com/Uberi/Minetest-WorldEdit
+6. xdecor - https://github.com/minetest-mods/xdecor
